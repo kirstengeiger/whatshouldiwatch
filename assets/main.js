@@ -1,34 +1,42 @@
-const renderItems = (data) => {
-    // The `ul` where the items will be inserted
-    const dataList = document.getElementById('suggested-movie');
+document.getElementById('suggest-button').addEventListener('click', function() {
+    fetch('assets/data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Generate a random index
+            const randomIndex = Math.floor(Math.random() * data.length);
+            
+            // Retrieve the random entry from the array
+            const randomEntryData = data[randomIndex];
 
-    // Loop through each item in the data array
-    data.forEach((item) => {
-        // Make a “template literal” as we have before, inserting your data
-        let listItem =
-            `
+            // Construct the HTML string for the random entry using a template literal
+            const randomEntryHTML = `
                 <li>
-                    <h1>${item.title}</h1>
-                    <img src="${item.poster}">
-					<p>${item.imdbRating} out of 10</p>
-					<p>${item.genre}</p>
-                    <p><time>${item.year}</time></p>
-					<p>${item.plot}</p>
-					<p>Directed by ${item.director}</p>
-					<p>Starring ${item.stars}</p>
-                    <p><em>${item.runTime}</em></p>
-                    <p>Streaming on ${item.streamPlatform}<a href="${item.streamLink}"></a></p>
+                    <h1>${randomEntryData.title}</h1>
+                    <img src="${randomEntryData.poster}">
+                    <p>${randomEntryData.imdbRating} out of 10</p>
+                    <p>${randomEntryData.genre}</p>
+                    <p><time>${randomEntryData.year}</time></p>
+                    <p>${randomEntryData.plot}</p>
+                    <p>Directed by ${randomEntryData.director}</p>
+                    <p>Starring ${randomEntryData.stars}</p>
+                    <p><em>${randomEntryData.runTime}</em></p>
+                    <p>Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
                 </li>
             `;
+            
+            // The `ul` where the items will be inserted
+            const dataList = document.getElementById('suggested-movie');
+            
+            // Clear the existing content before adding the new random movie
+            dataList.innerHTML = '';
+            
+            // Add the random entry HTML to the `ul`
+            dataList.insertAdjacentHTML('beforeend', randomEntryHTML);
 
-        dataList.insertAdjacentHTML('beforeend', listItem); // Add it to the `ul`!
-    });
-};
-
-// Fetch gets your (local) JSON file…
-fetch('assets/data.json')
-	.then(response => response.json())
-	.then(data => {
-		// And passes the data to the function, above!
-		renderItems(data)
-	})
+            // Now you can do whatever you want with the random entry data
+            console.log('Random Entry:', randomEntryData);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+});
