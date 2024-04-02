@@ -10,10 +10,14 @@ const renderItems = (data) => {
                 <li>
                     <h1>${item.title}</h1>
                     <img src="${item.poster}">
-                    <p>Released in <time>${item.year}</time></p>
+					<p>${item.imdbRating} out of 10</p>
+					<p>${item.genre}</p>
+                    <p><time>${item.year}</time></p>
+					<p>${item.plot}</p>
+					<p>Directed by ${item.director}</p>
+					<p>Starring ${item.stars}</p>
                     <p><em>${item.runTime}</em></p>
                     <p>Streaming on ${item.streamPlatform}<a href="${item.streamLink}"></a></p>
-                    <p>${item.imdbRating} out of 10</p>
                 </li>
             `;
 
