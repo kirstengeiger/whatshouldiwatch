@@ -1,12 +1,9 @@
-const apiKey = "c43b7cbd";
-const queryURL = `http://www.omdbapi.com/?apikey=${apiKey}&`;
+// const apiKey = "c43b7cbd";
+fetch(`http://www.omdbapi.com/?apikey=c43b7cbd&`)
+    .then(res => res.json())
+    .then(data => console.log(data))
 
-fetch(queryURL)
-  .then((response) => response.json())
-  .then((data) => {
-    let title = data.Title; // Assuming you want to extract the title from the response
-    console.log(title);
-  })
-  .catch((error) => {
-    console.error('Error fetching data:', error);
-  });
+// console.log(fetch)
+console.log('hello')
+
+  
