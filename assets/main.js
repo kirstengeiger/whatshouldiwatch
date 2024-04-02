@@ -46,16 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Construct the HTML string for the random entry using a template literal
                 const randomEntryHTML = `
                     <li>
-                        <h1>${randomEntryData.title}</h1>
+                        <h1 class="title">${randomEntryData.title}</h1>
                         <img src="${randomEntryData.poster}">
-                        <p>${randomEntryData.imdbRating} out of 10</p>
-                        <p>${randomEntryData.genre}</p>
-                        <p><time>${randomEntryData.year}</time></p>
-                        <p>${randomEntryData.plot}</p>
-                        <p>Directed by ${randomEntryData.director}</p>
-                        <p>Starring ${randomEntryData.stars}</p>
-                        <p><em>${randomEntryData.runTime}</em></p>
-                        <p>Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                        <p class="imdbRating">${randomEntryData.imdbRating} out of 10</p>
+                        <p class="genre">${randomEntryData.genre}</p>
+                        <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                        <p class="plot">${randomEntryData.plot}</p>
+                        <p class="director">Directed by ${randomEntryData.director}</p>
+                        <p class="starring">Starring ${randomEntryData.stars}</p>
+                        <p class="runTime"><em>${randomEntryData.runTime}</em></p>
+                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
                     </li>
                 `;
 
