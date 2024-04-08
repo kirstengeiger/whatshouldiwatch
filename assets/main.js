@@ -1,52 +1,3 @@
-    
-
-// TRIED THE RENDERBLOCK RULE BUT IT WASN'T WORKING
-// Function to render blocks based on the filter
-// function renderBlocks(filter) {
-//     const container = document.getElementById('container');
-//     container.innerHTML = ''; // Clear container before rendering blocks
-    
-//     data.forEach(block => {
-//         let show = false;
-//         filter.forEach(value => {
-//             if (value === block.year) {
-//                 show = true;
-//             }
-//         });
-//         if (show) {
-//             // Create block HTML
-//             const blockHTML = `
-//                 <div class="block">
-//                     <h2>${block.title}</h2>
-//                     <p>Year: ${block.year}</p>
-//                     <p>Director: ${block.director}</p>
-//                     <img src="${block.poster}" alt="${block.title} Poster">
-//                 </div>
-//             `;
-//             // Append block to container
-//             container.insertAdjacentHTML('beforeend', blockHTML);
-//         }
-//     });
-// }
-
-// // Add change event listener to checkboxes
-// document.querySelectorAll('.year-checkbox').forEach(checkbox => {
-//     checkbox.addEventListener('change', () => {
-//         const selectedYears = Array.from(document.querySelectorAll('.year-checkbox:checked')).map(checkbox => checkbox.value);
-//         renderBlocks(selectedYears);
-//     });
-// });
-
-// document.querySelectorAll('.check').forEach(el => {
-//     el.addEventListener('change', () => {
-//         const filter = [];
-//         document.querySelectorAll('.check:checked').forEach(checkbox => {
-//             filter.push(checkbox.value);
-//         });
-//         renderBlocks(filter);
-//     });
-// });
-
 // Add change event listener to checkboxes
 document.querySelectorAll('.year-checkbox').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
@@ -221,3 +172,50 @@ document.getElementById('suggest-button').addEventListener('click', () => {
 //     }
 //     return [startYear, endYear];
 // }
+
+// TRIED THE RENDERBLOCK RULE BUT IT WASN'T WORKING
+// Function to render blocks based on the filter
+// function renderBlocks(filter) {
+//     const container = document.getElementById('container');
+//     container.innerHTML = ''; // Clear container before rendering blocks
+    
+//     data.forEach(block => {
+//         let show = false;
+//         filter.forEach(value => {
+//             if (value === block.year) {
+//                 show = true;
+//             }
+//         });
+//         if (show) {
+//             // Create block HTML
+//             const blockHTML = `
+//                 <div class="block">
+//                     <h2>${block.title}</h2>
+//                     <p>Year: ${block.year}</p>
+//                     <p>Director: ${block.director}</p>
+//                     <img src="${block.poster}" alt="${block.title} Poster">
+//                 </div>
+//             `;
+//             // Append block to container
+//             container.insertAdjacentHTML('beforeend', blockHTML);
+//         }
+//     });
+// }
+
+// // Add change event listener to checkboxes
+// document.querySelectorAll('.year-checkbox').forEach(checkbox => {
+//     checkbox.addEventListener('change', () => {
+//         const selectedYears = Array.from(document.querySelectorAll('.year-checkbox:checked')).map(checkbox => checkbox.value);
+//         renderBlocks(selectedYears);
+//     });
+// });
+
+// document.querySelectorAll('.check').forEach(el => {
+//     el.addEventListener('change', () => {
+//         const filter = [];
+//         document.querySelectorAll('.check:checked').forEach(checkbox => {
+//             filter.push(checkbox.value);
+//         });
+//         renderBlocks(filter);
+//     });
+// });
