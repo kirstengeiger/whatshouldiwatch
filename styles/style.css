@@ -33,7 +33,7 @@ header h1 {
     padding-bottom: var(--year-padding);
 }
 
-.filter-year button {
+.filter-year label {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
 }
@@ -42,7 +42,7 @@ header h1 {
     padding-bottom: var(--year-padding);
 }
 
-.suggest-movie button {
+.suggest-movie {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
 }
