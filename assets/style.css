@@ -118,7 +118,12 @@ body {
 }
 
 .movie {
+    display: none; /* Hide the movie section by default */
     background-color: black;
+}
+
+.movie.active {
+    display: block; /* Show the movie section when it has the "active" class */
 }
 
 .imdbRating, 
@@ -218,7 +223,7 @@ img {
         --title-type: calc(2 * var(--type-p));
 
         --main-padding: calc(1.5 * var(--type-p));
-        --year-padding: calc(1 * var(--type-p));
+        --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
         --movie-padding: calc(1.5 * var(--type-p));
         --img-padding: calc(1.5 * var(--type-p));

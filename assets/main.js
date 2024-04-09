@@ -36,7 +36,7 @@ document.getElementById('suggest-button').addEventListener('click', () => {
                     <li>
                         <h1 class="title">${randomEntryData.title}</h1>
                         <img src="${randomEntryData.poster}">
-                        <p class="imdbRating">${randomEntryData.imdbRating} out of 10</p>
+                        <p class="imdbRating">Rating: ${randomEntryData.imdbRating} out of 10</p>
                         <p class="genre">${randomEntryData.genre}</p>
                         <p class="yearReleased"><time>${randomEntryData.year}</time></p>
                         <p class="plot">${randomEntryData.plot}</p>
@@ -59,6 +59,16 @@ document.getElementById('suggest-button').addEventListener('click', () => {
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+});
+
+// Add event listener to toggle movie section visibility
+document.addEventListener("DOMContentLoaded", function() {
+    const suggestButton = document.getElementById('suggest-button');
+    const movieSection = document.querySelector('.movie');
+
+    suggestButton.addEventListener('click', function() {
+        movieSection.classList.add('active'); // Add the "active" class to show the movie section
+    });
 });
 
 // DOESN'T SHOW THE MOVIE, NOT CONNECTED TO THE SUGGEST MOVIE BUTTON
