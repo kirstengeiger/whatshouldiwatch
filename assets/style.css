@@ -216,7 +216,7 @@ img {
 
 @media (min-width: 320px) {
     :root {
-        --type-p: 60px;
+        --type-p: 40px;
 
         --h1-type: calc(2 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
