@@ -55,7 +55,7 @@ header h1 {
 }
 
 body {
-    background-color: #D5ACAF;
+    background-color: #C9DEEB;
     color: black;
 }
 
@@ -177,7 +177,7 @@ body {
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #9B1800;
+    background-color: #05228B;
   }
   
   /* Create the checkmark/indicator (hidden when not checked)
@@ -208,8 +208,6 @@ body {
 img {
     padding: var(--img-padding);
 }
-
-
 
 @media (min-width: 320px) {
     :root {
