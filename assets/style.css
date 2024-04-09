@@ -1,11 +1,25 @@
 @font-face {
     font-family: 'Pencerio'; /* Specify the desired font family name */
-    src: url('styles/pencerio.otf') format('truetype'); /* Path to your font file */
-    /* You can add additional src declarations for different font formats */
+    src: url('styles/pencerio-hairline.otf') format('truetype'); /* Path to your font file */
+
+    font-family: 'Caligna Free';
+    src: url('styles/caligna-free.ttf') format('truetype');
+
+    font-family: 'Kanopi Brazil';
+    src: url('styles/kanopibrazil-regular.otf') format('truetype');
+
+    font-family: 'Sergio Trendy';
+    src: url('styles/sergio-trendy.ttf') format('truetype');
+
+    /* font-family: 'Pinyon Script';
+    src: url('styles/pinyonscript-regular.ttf'); */
 }
-/*'Poppins', sans-serif;*/
+
+/* 'Poppins', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* 'Pinyon Script', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
 /* body {
     padding: var(--main-padding);
@@ -15,14 +29,34 @@ header,
 .filter-year,
 .suggest-movie,
 .movie {
-    padding: var(--main-padding);
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+}
+
+.filter-year,
+.suggest-movie,
+.movie {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+header {
+    padding-bottom: var(--main-padding);
+    padding-top: var(--main-padding);
 }
 
 
 header h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kanopi Brazil';
     font-size: var(--h1-type);
-    padding-bottom: var(--h1-type);
+    /* padding-bottom: var(--h1-type); */
+    line-height: 110%;
+    color: black;
+}
+
+body {
+    background-color: #D5ACAF;
+    color: black;
 }
 
 .label {
@@ -46,6 +80,10 @@ header h1 {
     display: flex;
     flex-direction: column;
     padding-bottom: var(--year-padding);
+    margin-left: var(--main-padding);
+    margin-right: var(--main-padding);
+    border-radius: 30px;
+    background: #F3F0EA;
 }
 
 .filter-year label {
@@ -55,6 +93,7 @@ header h1 {
     display: flex; /* Add flex display */
     align-items: center; /* Align items vertically */
 }
+
 
 /* .suggest-movie {
     text-align: center; 
@@ -67,20 +106,21 @@ header h1 {
     padding-bottom: var(--suggest-padding);
     padding-left: calc(2 * var(--suggest-padding));
     padding-right: calc(2 * var(--suggest-padding));
-    background: grey;
+    background: #eee;
     border-radius: var(--suggest-radius);
     cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 #suggest-button:active {
-    background: blue;
+    background: #FCECA4;
 }
 
 .movie {
     background-color: black;
 }
 
-.title, 
 .imdbRating, 
 .genre, 
 .yearReleased, 
@@ -93,6 +133,13 @@ header h1 {
     font-size: 30px;
     padding: 10px;
     color: white;
+}
+
+.title {
+    font-family: 'Kanopi Brazil';
+    font-size: var(--title-type);
+    padding-bottom: var(--movie-padding);
+    color: White;
 }
 
 /* Customize the label (the container) */
@@ -117,16 +164,20 @@ header h1 {
     height: var(--type-p);
     width: var(--type-p);
     background-color: #eee;
+    border: solid 2px;
+    border-color: black;
   }
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
     background-color: #ccc;
+    border: solid 2px;
+    border-color: black;
   }
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: green;
+    background-color: #9B1800;
   }
   
   /* Create the checkmark/indicator (hidden when not checked)
@@ -154,18 +205,31 @@ header h1 {
     transform: rotate(45deg);
   } */
 
+img {
+    padding: var(--img-padding);
+}
+
+
+
 @media (min-width: 320px) {
     :root {
-        --type-p: 50px;
+        --type-p: 60px;
 
         --h1-type: calc(2 * var(--type-p));
-        --h2-type: calc(1.3 * var(--type-p));
+        --h2-type: calc(1 * var(--type-p));
+        --title-type: calc(2 * var(--type-p));
 
-        --main-padding: calc(2 * var(--type-p));
-        --year-padding: calc(0.8 * var(--type-p));
+        --main-padding: calc(1.5 * var(--type-p));
+        --year-padding: calc(1 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
+        --movie-padding: calc(1.5 * var(--type-p));
+        --img-padding: calc(1.5 * var(--type-p));
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
+    }
+
+    .title {
+        line-height: 110%;
     }
 
     img {
