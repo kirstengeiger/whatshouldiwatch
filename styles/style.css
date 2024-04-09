@@ -7,9 +7,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-body {
+/* body {
+    padding: var(--main-padding);
+} */
+
+header,
+.filter-year,
+.suggest-movie,
+.movie {
     padding: var(--main-padding);
 }
+
 
 header h1 {
     font-family: 'Poppins', sans-serif;
@@ -48,19 +56,43 @@ header h1 {
     align-items: center; /* Align items vertically */
 }
 
-.suggest-movie {
-    padding-bottom: var(--year-padding);
-}
+/* .suggest-movie {
+    text-align: center; 
+} */
 
-.suggest-movie {
+#suggest-button {
     font-family: 'Poppins', sans-serif;
     font-size: var(--h2-type);
+    padding-top: var(--suggest-padding);
+    padding-bottom: var(--suggest-padding);
+    padding-left: calc(2 * var(--suggest-padding));
+    padding-right: calc(2 * var(--suggest-padding));
+    background: grey;
+    border-radius: var(--suggest-radius);
+    cursor: pointer;
 }
 
-.title, .imdbRating, .genre, .yearReleased, .director, .starring, .runTime, .plot, .streaming {
+#suggest-button:active {
+    background: blue;
+}
+
+.movie {
+    background-color: black;
+}
+
+.title, 
+.imdbRating, 
+.genre, 
+.yearReleased, 
+.director, 
+.starring, 
+.runTime, 
+.plot, 
+.streaming {
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     padding: 10px;
+    color: white;
 }
 
 /* Customize the label (the container) */
@@ -132,5 +164,11 @@ header h1 {
         --main-padding: calc(2 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
+        --suggest-padding: calc(0.5 * var(--type-p));
+        --suggest-radius: 100px;
+    }
+
+    img {
+        width: 100%;
     }
 }
