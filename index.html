@@ -10,6 +10,49 @@
             <h1>What to Watch?</h1>
         </header>
         <main>
+            <section class="filter">
+                <section class="about">
+                    Do you ever find yourself scrolling through streaming platforms, feeling lost on what to watch? 
+                </section>
+                <section class="filters">
+                    <ul class="filter-year">
+                        <p class="label">Year</p>
+                        <hr>
+                        <label class="container">2020s
+                            <input type="checkbox" class="year-checkbox" value="2020-2029">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">2010s
+                            <input type="checkbox" class="year-checkbox" value="2010-2019">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">2000s
+                            <input type="checkbox" class="year-checkbox" value="2000-2009">
+                            <span class="checkmark"></span>
+                        </label>
+                        <!-- Add checkboxes for other decades as needed -->
+                    </ul>
+                    <ul class="filter-genre">
+                        <p class="label">Genre</p>
+                        <hr>
+                        <label class="container">Action
+                            <input type="checkbox" class="genre-checkbox" value="Action">
+                            <span class="checkmark"></span>
+                        </label>
+                    </ul>
+                <!-- <section class="duration"> -->
+                </section>
+                <section class="suggest-movie">
+                    <button id="suggest-button">Suggest Movie</button>
+                </section>
+            </section>
+            <section class="movie">
+                <ul id="suggested-movie"></ul>
+            </section>
+        </main>
+    </body>
+</html>
+
             <!-- <section class="filter-genre">
                 <button class="genre-button-action">Action</button>
                 <button class="genre-button-adventure">Adventure</button>
@@ -26,40 +69,3 @@
                 <button class="genre-button-thriller">Thriller</button>
                 <button class="genre-button-war">War</button>
             </section> -->
-            <!-- <ul class="filter-year">
-                <label><input type="checkbox" class="year-checkbox" value="2020s">2020s</label>
-                <label><input type="checkbox" class="year-checkbox" value="2010s">2010s</label>
-                <label><input type="checkbox" class="year-checkbox" value="2000s">2000s</label>
-                <label><input type="checkbox" class="year-checkbox" value="1990s">1990s</label>
-                <label><input type="checkbox" class="year-checkbox" value="1980s">1980s</label>
-                <label><input type="checkbox" class="year-checkbox" value="1970s">1970s</label>
-            </ul> -->
-            <section class="filter">
-            <ul class="filter-year">
-                <p class="label">Year Made</p>
-                <label class="container">2020s
-                    <input type="checkbox" class="year-checkbox" value="2020-2029">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">2010s
-                    <input type="checkbox" class="year-checkbox" value="2010-2019">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">2000s
-                    <input type="checkbox" class="year-checkbox" value="2000-2009">
-                    <span class="checkmark"></span>
-                </label>
-                <!-- Add checkboxes for other decades as needed -->
-            </ul>
-            <!-- <section class="duration">
-            </section> -->
-            <section class="suggest-movie">
-                <button id="suggest-button">Suggest Movie</button>
-            </section>
-            </section>
-            <section class="movie">
-                <ul id="suggested-movie"></ul>
-            </section>
-        </main>
-    </body>
-</html>

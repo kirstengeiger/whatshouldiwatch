@@ -26,14 +26,18 @@
 } */
 
 header,
+.about,
 .filter-year,
+.filter-genre,
 .suggest-movie,
 .movie {
     padding-left: var(--main-padding);
     padding-right: var(--main-padding);
 }
 
+.about,
 .filter-year,
+.filter-genre,
 .suggest-movie,
 .movie {
     padding-top: var(--main-padding);
@@ -47,7 +51,7 @@ header {
 
 
 header h1 {
-    font-family: 'Kanopi Brazil';
+    font-family: 'Poppins', sans-serif;
     font-size: var(--h1-type);
     /* padding-bottom: var(--h1-type); */
     line-height: 110%;
@@ -59,9 +63,22 @@ body {
     color: black;
 }
 
+.about {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--about-type);
+}
+
 .label {
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     font-size: var(--h2-type);
+}
+
+hr {
+    border: none; /* Remove default border */
+    height: 2px; /* Set the height */
+    background-color: #000; /* Set the color */
+    margin-top: calc(0.5 * var(--h2-type));
     margin-bottom: var(--h2-type);
 }
 
@@ -71,18 +88,19 @@ body {
     padding-bottom: var(--genre-padding);
 }
 
-.filter-genre button {
+.filter-genre label {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
 }
 
-.filter-year {
-    display: flex;
-    flex-direction: column;
+.filter-year,
+.filter-genre {
+    /* display: flex;
+    flex-direction: column; */
     padding-bottom: var(--year-padding);
+    margin-top: var(--year-padding);
     margin-left: var(--main-padding);
     margin-right: var(--main-padding);
-    border-radius: 30px;
     background: #F3F0EA;
 }
 
@@ -135,13 +153,13 @@ body {
 .plot, 
 .streaming {
     font-family: 'Poppins', sans-serif;
-    font-size: 30px;
+    font-size: var(--type-p);
     padding: 10px;
     color: white;
 }
 
 .title {
-    font-family: 'Kanopi Brazil';
+    font-family: 'Poppins', sans-serif;
     font-size: var(--title-type);
     padding-bottom: var(--movie-padding);
     color: White;
@@ -216,7 +234,39 @@ img {
 
 @media (min-width: 320px) {
     :root {
-        --type-p: 40px;
+        --type-p: 50px;
+
+        --h1-type: calc(2 * var(--type-p));
+        --h2-type: calc(1 * var(--type-p));
+        --about-type: calc(1 * var(--type-p));
+        --title-type: calc(2 * var(--type-p));
+
+        --main-padding: calc(1.5 * var(--type-p));
+        --year-padding: calc(0.8 * var(--type-p));
+        --genre-padding: calc(2 * var(--type-p));
+        --movie-padding: calc(1.5 * var(--type-p));
+        --img-padding: calc(1.5 * var(--type-p));
+        --suggest-padding: calc(0.5 * var(--type-p));
+        --suggest-radius: 100px;
+    }
+
+    .filter-year,
+    .filter-genre {
+        border-radius: 30px;
+    }
+
+    .title {
+        line-height: 110%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --type-p: 20px;
 
         --h1-type: calc(2 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
@@ -231,11 +281,39 @@ img {
         --suggest-radius: 100px;
     }
 
+    main {
+        display: flex;
+    }
+
+    .filter {
+        flex: 1; /* Make the filter section flexible */
+        max-width: 45vw;
+    }
+
+    .filter-year,
+    .filter-genre {
+        max-width: 10vw;
+        border-radius: 10px;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about {
+        max-width: 40vw;
+    }
+
+    .movie {
+        flex: 1; /* Make the movie section flexible */
+    }
+
     .title {
         line-height: 110%;
     }
 
     img {
-        width: 100%;
+        width: 40%;
     }
 }
