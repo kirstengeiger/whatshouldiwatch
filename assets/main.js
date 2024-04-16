@@ -45,16 +45,21 @@ document.getElementById('suggest-button').addEventListener('click', () => {
 
                 const randomEntryHTML = `
                     <li class="suggestion-mobile">
-                        <h1 class="title">${randomEntryData.title}</h1>
-                        <img src="${randomEntryData.poster}">
-                        <p class="imdbRating">Rating: ${randomEntryData.imdbRating} out of 10</p>
-                        <p class="genre">${randomEntryData.genre}</p>
-                        <p class="yearReleased"><time>${randomEntryData.year}</time></p>
-                        <p class="plot">${randomEntryData.plot}</p>
-                        <p class="director">Directed by ${randomEntryData.director}</p>
-                        <p class="starring">Starring ${randomEntryData.stars}</p>
-                        <p class="runTime"><em>${randomEntryData.runTime}</em></p>
-                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                        <section class="top-bar">
+                            <button class="exit-button">x</button>
+                        </section>
+                        <section class="movie-info">
+                            <h1 class="title">${randomEntryData.title}</h1>
+                            <img src="${randomEntryData.poster}">
+                            <p class="imdbRating">Rating: ${randomEntryData.imdbRating} out of 10</p>
+                            <p class="genre">${randomEntryData.genre}</p>
+                            <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                            <p class="plot">${randomEntryData.plot}</p>
+                            <p class="director">Directed by ${randomEntryData.director}</p>
+                            <p class="starring">Starring ${randomEntryData.stars}</p>
+                            <p class="runTime"><em>${randomEntryData.runTime}</em></p>
+                            <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                        </section>
                     </li>
 
                     <li class="suggestion-desktop">

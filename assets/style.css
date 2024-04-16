@@ -323,6 +323,10 @@ img {
         border-radius: 30px;
     }
 
+    .suggestion-desktop {
+        display: none;
+    }
+
     .suggestion-mobile {
         display: block;
         position: fixed; /* Fixed positioning to cover the whole screen */
@@ -334,10 +338,16 @@ img {
         background-color: black; /* Semi-transparent white background */
         padding: 20px; /* Adjust padding as needed */
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
+        margin: 25px;
     }
 
-    .suggestion-desktop {
-        display: none;
+    .top-bar {
+        margin: 30px;
+    }
+
+    .exit-button {
+        font-size: 50px;
+        font-family: 'Popppins', sans-serif;
     }
 
     .title {
@@ -345,7 +355,7 @@ img {
     }
 
     img {
-        width: 100%;
+        height: 50vh;
     }
 }
 
