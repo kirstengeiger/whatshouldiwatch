@@ -55,12 +55,25 @@ header h1 {
     font-size: var(--h1-type);
     /* padding-bottom: var(--h1-type); */
     line-height: 110%;
-    color: black;
+    color: #F3F0EA;
 }
 
 body {
-    background-color: #C9DEEB;
-    color: black;
+    background-color: #090D0C;
+    color: #F3F0EA;
+}
+
+.enter-button {
+    padding-top: var(--enter-padding);
+    padding-bottom: var(--enter-padding);
+    padding-left: calc(4 * var(--enter-padding));
+    padding-right: calc(4 * var(--enter-padding));
+    background-color: #F3F0EA;
+    color: #090D0C;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-p);
+    border-radius: var(--suggest-radius);
+    align-items: center;
 }
 
 .about {
@@ -246,6 +259,7 @@ img {
         --genre-padding: calc(2 * var(--type-p));
         --movie-padding: calc(1.5 * var(--type-p));
         --img-padding: calc(1.5 * var(--type-p));
+        --enter-padding: calc(0.8 * var(--type-p));
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
     }
