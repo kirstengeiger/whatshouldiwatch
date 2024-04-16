@@ -46,7 +46,7 @@ document.getElementById('suggest-button').addEventListener('click', () => {
                 const randomEntryHTML = `
                     <li class="suggestion-mobile">
                         <section class="top-bar">
-                            <button class="exit-button">x</button>
+                            <button class="exit-button">X</button>
                         </section>
                         <section class="movie-info">
                             <h1 class="title">${randomEntryData.title}</h1>
@@ -89,6 +89,15 @@ document.getElementById('suggest-button').addEventListener('click', () => {
             console.error('Error fetching data:', error);
         });
 });
+
+    // Function to add event listener to the exit button
+    function addExitButtonListener() {
+        const exitButton = document.querySelector('.exit-button');
+        exitButton.addEventListener('click', function() {
+            // Hide the movie section
+            movieSection.classList.remove('active');
+        });
+    }
 
 // Add event listener to toggle movie section visibility
 document.addEventListener("DOMContentLoaded", function() {
