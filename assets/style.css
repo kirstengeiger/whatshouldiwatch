@@ -138,12 +138,43 @@ hr {
 }
 
 /* ------------- Filters: Year ------------- */
-.filter-year label {
+.label {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
     margin-bottom: var(--year-padding);
     display: flex; /* Add flex display */
     align-items: center; /* Align items vertically */
+    color: black;
+}
+
+.container {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--type-p);
+}
+
+.filter-year .toggle-list {
+    display: none; /* Hide the list by default */
+}
+
+.filter-year.active .toggle-list {
+    display: block; /* Show the list when the filter-year is active */
+}
+
+.filter-year .label {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-year .arrow {
+    font-size: var(--type-p);
+    margin-left: 5px;
+}
+
+.filter-year.active .arrow {
+    transform: rotate(270deg); /* Rotate arrow when filter-year is active */
 }
 
 
@@ -228,6 +259,7 @@ img {
     cursor: pointer;
     width: 100%;
     text-align: center;
+    color: black;
 }
 
 #suggest-button:active {
@@ -270,6 +302,7 @@ img {
         --type-p: 50px;
 
         --h1-type: calc(2 * var(--type-p));
+        --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
 
@@ -288,6 +321,23 @@ img {
     .filter-year,
     .filter-genre {
         border-radius: 30px;
+    }
+
+    .suggestion-mobile {
+        display: block;
+        position: fixed; /* Fixed positioning to cover the whole screen */
+        top: 0;
+        left: 0;
+        width: 100%; /* Take up the entire width of the screen */
+        height: 100%; /* Take up the entire height of the screen */
+        z-index: 9999; /* Ensure it appears on top of other content */
+        background-color: black; /* Semi-transparent white background */
+        padding: 20px; /* Adjust padding as needed */
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
+    }
+
+    .suggestion-desktop {
+        display: none;
     }
 
     .title {
@@ -335,6 +385,14 @@ img {
     .filters {
         display: flex;
         flex-direction: column;
+    }
+
+    .suggestion-mobile {
+        display: none;
+    }
+    
+    .suggestion-desktop {
+        display: block;
     }
 
     .about {

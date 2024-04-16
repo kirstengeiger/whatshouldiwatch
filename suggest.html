@@ -9,31 +9,24 @@
         <main>
                 <section class="filters">
                     <ul class="filter-year">
-                        <p class="label">Year</p>
-                        <hr>
-                        <label class="container">2020s
-                            <input type="checkbox" class="year-checkbox" value="2020-2029">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">2010s
-                            <input type="checkbox" class="year-checkbox" value="2010-2019">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">2000s
-                            <input type="checkbox" class="year-checkbox" value="2000-2009">
-                            <span class="checkmark"></span>
-                        </label>
-                        <!-- Add checkboxes for other decades as needed -->
+                        <p class="label">Year<span class="arrow">◀</span></p>
+                        <div class="toggle-list">
+                            <!-- <hr> -->
+                            <label class="container">2020s
+                                <input type="checkbox" class="year-checkbox" value="2020-2029">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">2010s
+                                <input type="checkbox" class="year-checkbox" value="2010-2019">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">2000s
+                                <input type="checkbox" class="year-checkbox" value="2000-2009">
+                                <span class="checkmark"></span>
+                            </label>
+                            <!-- Add checkboxes for other decades as needed -->
+                        </div>
                     </ul>
-                    <!-- <ul class="filter-genre">
-                        <p class="label">Genre</p>
-                        <hr>
-                        <label class="container">Action
-                            <input type="checkbox" class="genre-checkbox" value="Action">
-                            <span class="checkmark"></span>
-                        </label>
-                    </ul> -->
-                <!-- <section class="duration"> -->
                 </section>
                 <section class="suggest-movie">
                     <button id="suggest-button">Suggest Movie</button>
