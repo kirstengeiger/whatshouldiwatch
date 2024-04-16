@@ -50,10 +50,10 @@ header {
 }
 
 
-header h1 {
+h1 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--h1-type);
-    /* padding-bottom: var(--h1-type); */
+    padding-bottom: var(--h1-type);
     line-height: 110%;
     color: #F3F0EA;
 }
@@ -63,20 +63,43 @@ body {
     color: #F3F0EA;
 }
 
+.enter {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Set the height of the container to be equal to the viewport height */
+}
+
 .enter-button {
-    padding-top: var(--enter-padding);
-    padding-bottom: var(--enter-padding);
-    padding-left: calc(4 * var(--enter-padding));
-    padding-right: calc(4 * var(--enter-padding));
-    background-color: #F3F0EA;
+    background-color: #AB3A25;
+    width: var(--button-size);
+    height: var(--button-size);
+    padding: 0; /* Remove padding */
     color: #090D0C;
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
-    border-radius: var(--suggest-radius);
+    border-radius: 50%; /* Make the button a circle */
+    display: flex; /* Ensure content is centered vertically and horizontally */
+    justify-content: center;
     align-items: center;
 }
 
+.enter-button:hover {
+    background-color: #FF5233;
+}
+
+.enter-button:active {
+    border-color: white;
+}
+
 .about {
+    background-image: url("static-tv.jpeg");
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.about p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--about-type);
 }
@@ -254,6 +277,8 @@ img {
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
 
+        --button-size: 150px;
+
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -293,6 +318,7 @@ img {
         --img-padding: calc(1.5 * var(--type-p));
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
+        --enter-radius: 300px;
     }
 
     main {
