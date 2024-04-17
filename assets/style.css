@@ -349,9 +349,8 @@ img {
         height: 100%; /* Take up the entire height of the screen */
         z-index: 9999; /* Ensure it appears on top of other content */
         background-color: black; /* Semi-transparent white background */
-        padding: 20px; /* Adjust padding as needed */
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
-        margin: 25px;
+        padding: 25px;
     }
 
     .top-bar {
