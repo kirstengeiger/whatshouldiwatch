@@ -160,7 +160,7 @@ hr {
     padding-left: calc(2 * var(--suggest-padding));
     padding-right: calc(2 * var(--suggest-padding));
     background: #eee;
-    border-radius: var(--suggest-radius);
+    /* border-radius: var(--suggest-radius); */
     cursor: pointer;
     width: 100%;
     text-align: center;
@@ -425,18 +425,21 @@ hr {
     }
 
     main {
-        display: flex;
+        display: grid;
     }
     
     .intro {
-        flex: 1; /* Take up remaining space */
-        margin-right: 20px; /* Add spacing between sections */
-        width: 50vw;
+        /* flex: 1; /* Take up remaining space */
+        /* margin-right: 20px; Add spacing between sections */
+        /* width: 50vw; */
+        position: relative;
+        z-index: 2;
     }
     
     .movie {
-        flex: 1; /* Take up remaining space */
-        width: 50vw;
+        /* flex: 1; /* Take up remaining space */
+        /* width: 50vw; */
+        z-index: 1;
     }
 
     .suggestion-mobile {
@@ -489,6 +492,18 @@ hr {
 
     .movie {
         flex: 1; /* Make the movie section flexible */
+    }
+
+    .movie-info {
+        display: flex;
+    }
+
+    .movie-left {
+        flex: 1;
+    }
+
+    .movie-right {
+        flex: 1;
     }
 
     .title {
