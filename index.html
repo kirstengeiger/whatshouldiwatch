@@ -8,41 +8,42 @@
     </head>
     <body>
         <main>
-            <div class="about">
-                <h1>Let's find a movie for you</h1>
+            <section class="intro">
+                <section class="about">
+                    <h1>Let's find a movie for you</h1>
+                    <hr class="white-line">
+                    <p>Select the decades you'd want to explore or simply get a random movie suggestion- it's up to you!</p>
+                    <hr class="white-line">
+                </section>
+                <section class="filters">
+                    <ul class="filter-year">
+                        <p class="label">Year<span class="arrow">◀</span></p>
+                        <div class="toggle-list">
+                            <!-- <hr> -->
+                            <label class="container">2020s
+                                <input type="checkbox" class="year-checkbox" value="2020-2029">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">2010s
+                                <input type="checkbox" class="year-checkbox" value="2010-2019">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">2000s
+                                <input type="checkbox" class="year-checkbox" value="2000-2009">
+                                <span class="checkmark"></span>
+                            </label>
+                            <!-- Add checkboxes for other decades as needed -->
+                        </div>
+                    </ul>
+                </section>
                 <hr class="white-line">
-                <p>Select the decades you'd want to explore or simply get a random movie suggestion- it's up to you!</p>
-                <hr class="white-line">
-            </div>
-            <section class="filters">
-                <ul class="filter-year">
-                    <p class="label">Year<span class="arrow">◀</span></p>
-                    <div class="toggle-list">
-                        <!-- <hr> -->
-                        <label class="container">2020s
-                            <input type="checkbox" class="year-checkbox" value="2020-2029">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">2010s
-                            <input type="checkbox" class="year-checkbox" value="2010-2019">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">2000s
-                            <input type="checkbox" class="year-checkbox" value="2000-2009">
-                            <span class="checkmark"></span>
-                        </label>
-                        <!-- Add checkboxes for other decades as needed -->
-                    </div>
-                </ul>
+                <section class="suggest-movie">
+                    <button id="suggest-button">Suggest Movie</button>
+                </section>
             </section>
-            <hr class="white-line">
-            <section class="suggest-movie">
-                <button id="suggest-button">Suggest Movie</button>
+            <section class="movie">
+                <ul id="suggested-movie"></ul>
             </section>
-        </section>
-        <section class="movie">
-            <ul id="suggested-movie"></ul>
-        </section>
         </main>
     </body> 
 </html>

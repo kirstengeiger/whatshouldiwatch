@@ -28,11 +28,6 @@
 h1 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--h1-type);
-    line-height: 100%;
-    max-width: 90vw;
-    padding-top: var(--main-padding);
-    padding-left: var(--main-padding);
-    padding-right: var(--main-padding);
 }
 
 .suggest-movie {
@@ -274,6 +269,13 @@ hr {
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
     }
 
+    h1 {
+        line-height: 100%;
+        max-width: 90vw;
+        padding-top: var(--main-padding);
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+    }
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
@@ -405,11 +407,12 @@ hr {
 
 @media (min-width: 1200px) {
     :root {
-        --type-p: 15px;
+        --type-p: 20px;
 
         --h1-type: calc(2 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
+        --movie-info-type: var(--type-p);
 
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
@@ -424,15 +427,16 @@ hr {
     main {
         display: flex;
     }
-
-    .filter {
-        flex: 1; /* Make the filter section flexible */
-        max-width: 45vw;
+    
+    .intro {
+        flex: 1; /* Take up remaining space */
+        margin-right: 20px; /* Add spacing between sections */
+        width: 50vw;
     }
-
-    .filters {
-        display: flex;
-        flex-direction: column;
+    
+    .movie {
+        flex: 1; /* Take up remaining space */
+        width: 50vw;
     }
 
     .suggestion-mobile {
@@ -443,8 +447,44 @@ hr {
         display: block;
     }
 
+    h1 {
+        line-height: 100%;
+        max-width: 50vw;
+        padding-top: var(--main-padding);
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+    }
+
     .about {
         max-width: 40vw;
+    }
+
+    .filters,
+    .filter-year,
+    .white-line,
+    .suggest-movie {
+        width: 50vw;
+    }
+
+    .container .checkmark:after {
+        content: "\2713"; /* Unicode checkmark character */
+        font-size: 20px; /* Adjust the size of the checkmark */
+        color: black; /* Set the color to black */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .title,
+    .movie-statistics, 
+    .plot,
+    .movie-people,
+    .streaming {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .movie {
