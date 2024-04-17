@@ -43,14 +43,6 @@
     padding-bottom: var(--main-padding);
 }
 
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--h1-type);
-    padding-bottom: var(--h1-type);
-    line-height: 110%;
-    color: #F3F0EA;
-}
-
 body {
     background-color: #090D0C;
     color: #F3F0EA;
@@ -242,10 +234,6 @@ hr {
     transform: rotate(45deg);
   } */
 
-img {
-    padding: var(--img-padding);
-}
-
 /* ------------- Suggest A Movie ------------- */
 #suggest-button {
     font-family: 'Poppins', sans-serif;
@@ -285,34 +273,66 @@ img {
     text-align: center;
 }
 
+.movie-info {
+    background-color: white;
+}
+
 .movie-info p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--movie-info-type);
-    padding: 10px;
-    color: white;
+    color: black;
+}
+
+hr {
+    border: none; /* Remove default border */
+    height: 3px; /* Set the height of the line */
+    background-color: black; /* Set the color of the line to black */
+    margin: 20px 0; /* Set margin around the line */
 }
 
 .title {
     font-family: 'Poppins', sans-serif;
     font-size: var(--title-type);
-    padding-bottom: var(--movie-padding);
-    color: White;
+    color: black;
+    text-transform: uppercase;
 }
 
 .movie-statistics {
-    display: flex;
+    display: grid;
     align-items: center; /* Align items vertically */
+    max-width: 100vw;
 }
 
 .movie-statistics p {
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+/* .movie-statistics p {
     font-size: var(--movie-stats-type);
 }
+
+.movie-statistics {
+    background-color: #FCECA4;
+}
+
+.plot {
+    background-color: #5E96FF;
+}
+
+.movie-people {
+    background-color: #C9DEEB;
+}
+
+.streaming {
+    background-color: #AFEBA0;
+} */
 
 @media (min-width: 320px) {
     :root {
         --type-p: 50px;
 
-        --h1-type: calc(1.5 * var(--type-p));
+        --h1-type: calc(3 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
@@ -325,7 +345,6 @@ img {
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
         --movie-padding: calc(1.5 * var(--type-p));
-        --img-padding: calc(1.5 * var(--type-p));
         --enter-padding: calc(0.8 * var(--type-p));
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
@@ -350,14 +369,17 @@ img {
         z-index: 9999; /* Ensure it appears on top of other content */
         background-color: black; /* Semi-transparent white background */
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
-        padding: 25px;
     }
 
     .top-bar {
-        margin: 30px;
+        padding: 30px;
         display: flex;
         justify-content: space-between; /* Spread out the buttons evenly */
         align-items: center; /* Align items vertically */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: black;
     }
 
     .exit-button {
@@ -373,6 +395,24 @@ img {
         align-items: center;
     }
 
+    /* Style to position the movie title on the left and bleed into the poster */
+    .movie-title-poster {
+        display: flex; /* Use flexbox to arrange items */
+        align-items: center; /* Center items vertically */
+    }
+
+    /* Style for the movie poster */
+    .movie-title-poster .poster {
+        max-width: 50vw; /* Adjust the maximum width of the poster */
+        flex-shrink: 0; /* Prevent the poster from shrinking */
+        margin-right: 10px; /* Add spacing between poster and title */
+    }
+
+    /* Style for the movie title */
+    .movie-title-poster .title {
+        margin: 0; /* Reset margin */
+    }
+
     /* .refresh-button {
        border: solid 1px;
        width: 100px;
@@ -384,15 +424,23 @@ img {
         height: 100px;
     } */
 
-    .movie-info {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+    .title,
+    .movie-statistics, 
+    .plot,
+    .movie-people,
+    .streaming {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .title {
         line-height: 110%;
+    }
+
+    .poster {
+        margin-right: auto;
     }
 
     img {
