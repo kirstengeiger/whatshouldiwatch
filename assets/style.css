@@ -299,6 +299,15 @@ img {
     color: White;
 }
 
+.movie-statistics {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.movie-statistics p {
+    font-size: var(--movie-stats-type);
+}
+
 @media (min-width: 320px) {
     :root {
         --type-p: 50px;
@@ -307,7 +316,8 @@ img {
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
-        --movie-info-type: 18px;
+        --movie-info-type: 20px;
+        --movie-stats-type: 40px;
 
         --button-size: 150px;
 

@@ -50,11 +50,13 @@ document.getElementById('suggest-button').addEventListener('click', () => {
                             <button class="refresh-button">↺</button>
                         </section>
                         <section class="movie-info">
-                            <h1 class="title">${randomEntryData.title}</h1>
                             <img src="${randomEntryData.poster}">
-                            <p class="imdbRating">Rating: ${randomEntryData.imdbRating} out of 10</p>
-                            <p class="genre">${randomEntryData.genre}</p>
-                            <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                            <h1 class="title">${randomEntryData.title}</h1>
+                            <section class="movie-statistics">
+                                <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
+                                <p class="genre">${randomEntryData.genre}</p>
+                                <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                            </section>
                             <p class="plot">${randomEntryData.plot}</p>
                             <p class="director">Directed by ${randomEntryData.director}</p>
                             <p class="starring">Starring ${randomEntryData.stars}</p>
