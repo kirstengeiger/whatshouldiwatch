@@ -4,37 +4,47 @@
         <link href="assets/reset.css" rel="stylesheet">
         <link href="assets/style.css" rel="stylesheet">
         <link href="assets/index.css" rel="stylesheet">
+        <script defer src="assets/main.js"></script>
     </head>
     <body>
         <main>
             <div class="about">
-                <h1>What to Watch?</h1>
-                <p>Ever find yourself scrolling through streaming platforms, feeling lost on what to watch? Click on and press play on a movie we'll suggest for you. </p>
+                <h1>Let's find a movie for you</h1>
+                <hr class="white-line">
+                <p>Select the decades you'd want to explore or simply get a random movie suggestion- it's up to you!</p>
+                <hr class="white-line">
             </div>
-            <div class="enter">
-                <button>
-                    <a href="suggest.html">
-                        <img src="images/powerbutton.png" class="enter-button">
-                    </a>
-                </button>
-            </div>
+            <section class="filters">
+                <ul class="filter-year">
+                    <p class="label">Year<span class="arrow">◀</span></p>
+                    <div class="toggle-list">
+                        <!-- <hr> -->
+                        <label class="container">2020s
+                            <input type="checkbox" class="year-checkbox" value="2020-2029">
+                            <span class="checkmark"></span>
+                        </label>
+                        <hr>
+                        <label class="container">2010s
+                            <input type="checkbox" class="year-checkbox" value="2010-2019">
+                            <span class="checkmark"></span>
+                        </label>
+                        <hr>
+                        <label class="container">2000s
+                            <input type="checkbox" class="year-checkbox" value="2000-2009">
+                            <span class="checkmark"></span>
+                        </label>
+                        <!-- Add checkboxes for other decades as needed -->
+                    </div>
+                </ul>
+            </section>
+            <hr class="white-line">
+            <section class="suggest-movie">
+                <button id="suggest-button">Suggest Movie</button>
+            </section>
+        </section>
+        <section class="movie">
+            <ul id="suggested-movie"></ul>
+        </section>
         </main>
     </body> 
 </html>
-
-            <!-- <section class="filter-genre">
-                <button class="genre-button-action">Action</button>
-                <button class="genre-button-adventure">Adventure</button>
-                <button class="genre-button-biography">Biography</button>
-                <button class="genre-button-comedy">Comedy</button>
-                <button class="genre-button-crime">Crime</button>
-                <button class="genre-button-drama">Drama</button>
-                <button class="genre-button-fantasy">Fantasy</button>
-                <button class="genre-button-history">History</button>
-                <button class="genre-button-musical">Musical</button>
-                <button class="genre-button-mystery">Mystery</button>
-                <button class="genre-button-romance">Romance</button>
-                <button class="genre-button-sport">Sport</button>
-                <button class="genre-button-thriller">Thriller</button>
-                <button class="genre-button-war">War</button>
-            </section> -->

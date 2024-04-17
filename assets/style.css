@@ -25,22 +25,19 @@
     padding: var(--main-padding);
 } */
 
-.about,
-.filter-year,
-.filter-genre,
-.suggest-movie,
-.movie {
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--h1-type);
+    line-height: 100%;
+    max-width: 90vw;
+    padding-top: var(--main-padding);
     padding-left: var(--main-padding);
     padding-right: var(--main-padding);
 }
 
-.about,
-.filter-year,
-.filter-genre,
-.suggest-movie,
-.movie {
-    padding-top: var(--main-padding);
-    padding-bottom: var(--main-padding);
+.suggest-movie {
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
 }
 
 body {
@@ -89,13 +86,8 @@ body {
 .about p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--about-type);
-}
-
-/* ------------- Filters: General ------------- */
-.label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: var(--h2-type);
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
 }
 
 hr {
@@ -103,6 +95,14 @@ hr {
     height: 2px; /* Set the height */
     background-color: #000; /* Set the color */
     margin-top: calc(0.5 * var(--h2-type));
+    margin-bottom: var(--h2-type);
+}
+
+.white-line {
+    border: none; /* Remove default border */
+    height: 2px; /* Set the height */
+    background-color: white; /* Set the color */
+    margin-top: var(--h2-type);
     margin-bottom: var(--h2-type);
 }
 
@@ -118,29 +118,18 @@ hr {
     font-size: var(--type-p);
 }
 
-.filter-year,
-.filter-genre {
-    /* display: flex;
-    flex-direction: column; */
-    padding-bottom: var(--year-padding);
-    margin-top: var(--year-padding);
-    margin-left: var(--main-padding);
-    margin-right: var(--main-padding);
-    background: #F3F0EA;
-}
-
 /* ------------- Filters: Year ------------- */
 .label {
     font-family: 'Poppins', sans-serif;
-    font-size: var(--type-p);
-    margin-bottom: var(--year-padding);
+    font-size: var(--type-year-label);
     display: flex; /* Add flex display */
     align-items: center; /* Align items vertically */
-    color: black;
+    color: white;
+    padding-bottom: var(--main-padding);
 }
 
 .container {
-    color: black;
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
 }
@@ -162,7 +151,6 @@ hr {
 
 .filter-year .arrow {
     font-size: var(--type-p);
-    margin-left: 5px;
 }
 
 .filter-year.active .arrow {
@@ -206,34 +194,30 @@ hr {
   
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-    background-color: #05228B;
+    background-color: white;
 }
   
-  /* Create the checkmark/indicator (hidden when not checked)
-  .checkmark:after {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  } */
+}
   
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
   
-  /* Style the checkmark/indicator
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  } */
-
+.container .checkmark:after {
+    content: "\2713"; /* Unicode checkmark character */
+    font-size: 50px; /* Adjust the size of the checkmark */
+    color: black; /* Set the color to black */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /* ------------- Suggest A Movie ------------- */
 #suggest-button {
     font-family: 'Poppins', sans-serif;
@@ -312,9 +296,10 @@ hr {
     :root {
         --type-p: 50px;
 
-        --h1-type: calc(3 * var(--type-p));
-        --h2-type: calc(1 * var(--type-p));
-        --about-type: calc(1 * var(--type-p));
+        --h1-type: calc(3.3 * var(--type-p));
+        --h2-type: calc(1.2 * var(--type-p));
+        --type-year-label: calc(1.5 * var(--type-p));
+        --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: 40px;
 
@@ -329,9 +314,10 @@ hr {
         --suggest-radius: 100px;
     }
 
-    .filter-year,
-    .filter-genre {
-        border-radius: 30px;
+    .filter-year {
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+        width: 100vw;
     }
 
     .suggestion-desktop {
@@ -442,12 +428,6 @@ hr {
     .filter {
         flex: 1; /* Make the filter section flexible */
         max-width: 45vw;
-    }
-
-    .filter-year,
-    .filter-genre {
-        max-width: 10vw;
-        border-radius: 10px;
     }
 
     .filters {
