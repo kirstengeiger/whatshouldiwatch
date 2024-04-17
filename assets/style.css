@@ -316,7 +316,7 @@ img {
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
-        --movie-info-type: 20px;
+        --movie-info-type: 40px;
         --movie-stats-type: 40px;
 
         --button-size: 150px;
