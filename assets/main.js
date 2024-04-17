@@ -46,19 +46,20 @@ document.addEventListener("DOMContentLoaded", function() {
                         <li class="suggestion-mobile">
                             <section class="top-bar">
                                 <button class="exit-button">X</button>
-                                <button id="refresh-button">↺</button>
+                                <button class="refresh-button"><img src="images/refreshbutton.png"></button>
                             </section>
                             <section class="movie-info">
                                 <h1 class="title">${randomEntryData.title}</h1>
                                 <hr>
                                 <section class="movie-title-poster">
                                     <img class="poster" src="${randomEntryData.poster}">
-                                    <section class="movie-statistics">
+                                </section>
+                                <hr>
+                                <section class="movie-statistics">
                                         <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
                                         <p class="genre">${randomEntryData.genre}</p>
                                         <p class="yearReleased"><time>${randomEntryData.year}</time></p>
                                         <p class="runTime"><em>${randomEntryData.runTime}</em></p>
-                                    </section>
                                 </section>
                                 <hr>
                                 <p class="plot">${randomEntryData.plot}</p>
