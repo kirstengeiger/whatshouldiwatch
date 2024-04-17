@@ -276,7 +276,8 @@ img {
     display: block; /* Show the movie section when it has the "active" class*/
 }
 
-.exit-button {
+.exit-button,
+.refresh-button {
     width: 100px; /* Adjust the size as needed */
     height: 100px; /* Adjust the size as needed */
     border-radius: 50%; /* Make the button a circle */
@@ -345,12 +346,34 @@ img {
 
     .top-bar {
         margin: 30px;
+        display: flex;
+        justify-content: space-between; /* Spread out the buttons evenly */
+        align-items: center; /* Align items vertically */
     }
 
     .exit-button {
         font-size: 50px;
         font-family: 'Popppins', sans-serif;
     }
+
+    .refresh-button {
+        font-family: 'Poppins', sans-serif;
+        font-size: 100px;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .refresh-button {
+       border: solid 1px;
+       width: 100px;
+       height: 100px;
+    } */
+
+    /* .refresh-button img {
+        width: 100px;
+        height: 100px;
+    } */
 
     .movie-info {
         padding-left: 15px;

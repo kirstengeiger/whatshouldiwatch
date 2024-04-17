@@ -47,6 +47,7 @@ document.getElementById('suggest-button').addEventListener('click', () => {
                     <li class="suggestion-mobile">
                         <section class="top-bar">
                             <button class="exit-button">X</button>
+                            <button class="refresh-button">↺</button>
                         </section>
                         <section class="movie-info">
                             <h1 class="title">${randomEntryData.title}</h1>
