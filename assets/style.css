@@ -312,7 +312,7 @@ img {
     :root {
         --type-p: 50px;
 
-        --h1-type: calc(2 * var(--type-p));
+        --h1-type: calc(1.5 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
@@ -396,7 +396,8 @@ img {
     }
 
     img {
-        height: 50vh;
+        height: 40vh;
+        width: 50vw;
     }
 }
 
