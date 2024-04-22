@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     <p class="starring">Starring ${randomEntryData.stars}</p>
                                 </section>
                                 <hr>
-                                <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                                <p class="streaming"><a href="${randomEntryData.streamLink}">Watch now</a></p>
                             </section>
                         </li>
 

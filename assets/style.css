@@ -205,15 +205,18 @@ hr {
 
 .movie-info p {
     font-family: 'Poppins', sans-serif;
-    font-size: var(--movie-info-type);
     color: black;
 }
 
+.plot p {
+    font-size: var(--movie-info-type);
+}
+
 hr {
-    border: none; /* Remove default border */
-    height: 3px; /* Set the height of the line */
-    background-color: black; /* Set the color of the line to black */
-    margin: 20px 0; /* Set margin around the line */
+    border: none;
+    height: 3px;
+    background-color: black; 
+    margin: 20px 0;
 }
 
 .title {
@@ -241,6 +244,7 @@ hr {
         --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: 40px;
+        --movie-statistics-type: 50px;
 
         --button-size: 150px;
 
@@ -382,7 +386,11 @@ hr {
         max-height: 100%; /* Ensure the poster doesn't exceed its container height */
     }
 
-    .title,
+    .title {
+        padding-bottom: 50px;
+    }
+
+
     .movie-statistics, 
     .plot,
     .movie-people,
@@ -395,6 +403,17 @@ hr {
 
     .movie-statistics p {
         padding-left: 20px;
+        font-size: var(--movie-statistics-type);
+        border: 1px solid;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 20px;
+        margin-left: 20px;
+        display: inline-block;
+        box-sizing: border-box;
+        justify-content: center;
     }
 
     .title {
@@ -408,6 +427,10 @@ hr {
     img {
         height: 40vh;
         width: 50vw;
+    }
+
+    .streaming {
+        background-color: #AFEBA0;
     }
 }
 
