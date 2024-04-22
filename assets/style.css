@@ -128,6 +128,11 @@ hr {
     font-size: var(--type-p);
 }
 
+.container p {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--year-type);
+}
+
 .filter-year .toggle-list {
     display: none; /* Hide the list by default */
 }
@@ -232,6 +237,7 @@ hr {
         --h1-type: calc(3.3 * var(--type-p));
         --h2-type: calc(1.2 * var(--type-p));
         --type-year-label: calc(1.5 * var(--type-p));
+        --year-type: 70px;
         --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: 40px;
@@ -282,7 +288,7 @@ hr {
     .container {
         display: block;
         position: relative;
-        padding-left: calc(1.5 * var(--type-p));
+        padding-left: calc(1.5 * var(--year-type));
         margin-top: calc(0.5 * var(--main-padding));
         cursor: pointer;
         font-size: var(--type-p);
@@ -297,8 +303,8 @@ hr {
         position: absolute;
         top: 0;
         left: 0;
-        height: var(--type-p);
-        width: var(--type-p);
+        height: var(--year-type);
+        width: var(--year-type);
         background-color: #eee;
         border: solid 2px;
         border-color: black;
