@@ -335,6 +335,8 @@ hr {
 
     .intro-mobile {
         display: block;
+        position: relative;
+        min-height: 100vh;
     }
 
     h1 {
@@ -389,6 +391,13 @@ hr {
     
     .container .checkmark:after {
         font-size: 50px; /* Adjust the size of the checkmark */
+    }
+
+    .suggest-movie {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: var(--main-padding);
     }
 
     .top-bar {
@@ -533,6 +542,11 @@ hr {
         border: 1px solid;
         border-color: white;
         align-items: center;
+    }
+
+    .suggest-movie {
+        position: relative;
+        margin-bottom: 0;
     }
 
     .text, 
