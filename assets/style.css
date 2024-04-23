@@ -81,8 +81,6 @@ body {
 .about p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--about-type);
-    padding-left: var(--main-padding);
-    padding-right: var(--main-padding);
 }
 
 hr {
@@ -154,6 +152,23 @@ hr {
     display: block;
 }
 
+.filter-year {
+    position: relative;
+}
+
+.toggle-list {
+    position: absolute;
+    top: 100%; /* Position the toggle-list below the label */
+    left: 0;
+    z-index: 1; /* Ensure the toggle-list appears on top of other content */
+    background-color: black;
+    border-top: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+    display: none; /* Initially hide the toggle-list */
+}
+
+
 .filter-year .toggle-list {
     display: none; /* Hide the list by default */
 }
@@ -185,7 +200,6 @@ hr {
     padding-bottom: var(--suggest-padding);
     padding-left: calc(2 * var(--suggest-padding));
     padding-right: calc(2 * var(--suggest-padding));
-    background: #eee;
     /* border-radius: var(--suggest-radius); */
     cursor: pointer;
     width: 100%;
@@ -316,6 +330,10 @@ hr {
         line-height: 100%;
         max-width: 90vw;
         padding-top: var(--main-padding);
+        padding-right: var(--main-padding);
+    }
+
+    .about {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
     }
@@ -492,20 +510,36 @@ hr {
         display: flex; /* Use flexbox layout */
     }
     
-    /* .text,
+    .filters,
+    .text, 
+    .suggest-movie {
+        border: 1px solid;
+        border-color: white;
+        align-items: center;
+    }
+
+    .text, 
+    .suggest-movie {
+        padding: 20px;
+    }
+
     .filters {
-        margin: 0 10px;
-    } */
+        padding-top: 20px;
+    }
+
+    .filter-year.active .toggle-list {
+        /* Your existing styles */
+        border: 1px solid white;
+        border-top: none; /* Remove the top border */
+        border-radius: 0 0 5px 5px; /* Add border radius to the bottom corners */
+    }
+
+    .suggest-movie {
+        background-color: #eee;
+    }
 
     .text {
         max-width: 40vw;
-    }
-    
-    hr {
-        border: none; /* Remove default border */
-        border-left: 2px solid white; /* Add a border to create the vertical line */
-        height: 100px; /* Set the height of the line */
-        transform: rotate(90deg); /* Rotate the line to make it vertical */
     }
 
     .movie {
@@ -531,29 +565,19 @@ hr {
         margin-top: calc(0.8 * var(--main-padding));
     }
 
-    h1 {
-        line-height: 100%;
-        padding-top: var(--main-padding);
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-    }
-
     .header-top {
         align-items: left;
     }
 
     .filter-year {
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-        width: 20vw;
+        width: 30vw;
+        padding-left: 20px;
     }
 
-    /* .filters,
-    .filter-year,
-    .white-line,
-    .suggest-movie {
-        width: 50vw;
-    } */
+    .toggle-list {
+        padding: 20px;
+        width: 100%;
+    }
 
     .container .checkmark:after {
         content: "\2713"; /* Unicode checkmark character */

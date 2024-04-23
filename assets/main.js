@@ -1,11 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Select the label element
-    const label = document.querySelector('.filter-year .label');
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Select the label element
+//     const label = document.querySelector('.filter-year .label');
 
-    // Add a click event listener to the label element
-    label.addEventListener('click', function() {
-        // Toggle the 'active' class on the parent <ul> element
-        label.parentElement.classList.toggle('active');
+//     // Add a click event listener to the label element
+//     label.addEventListener('click', function() {
+//         // Toggle the 'active' class on the parent <ul> element
+//         label.parentElement.classList.toggle('active');
+//     });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the label elements in both desktop and mobile versions
+    const labels = document.querySelectorAll('.intro-desktop .filter-year .label, .intro-mobile .filter-year .label');
+
+    // Add click event listeners to all label elements
+    labels.forEach(label => {
+        label.addEventListener('click', function() {
+            // Toggle the 'active' class on the parent <ul> element
+            label.parentElement.classList.toggle('active');
+        });
     });
 
     // Add change event listener to checkboxes
