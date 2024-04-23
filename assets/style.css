@@ -169,7 +169,7 @@ hr {
     top: 100%; /* Position the toggle-list below the label */
     left: 0;
     z-index: 1; /* Ensure the toggle-list appears on top of other content */
-    background-color: black;
+    background-color: #090D0C;
     border-top: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
@@ -362,7 +362,7 @@ hr {
         left: 0;
         height: var(--year-type);
         width: var(--year-type);
-        background-color: #eee;
+        background-color: white;
         border: solid 2px;
         border-color: black;
     }
@@ -545,7 +545,7 @@ hr {
     }
 
     .suggest-movie {
-        background-color: #eee;
+        background-color: white;
         width: 50vw;
     }
 
