@@ -1,45 +1,34 @@
 @font-face {
     font-family: 'Pencerio'; /* Specify the desired font family name */
     src: url('styles/pencerio-hairline.otf') format('truetype'); /* Path to your font file */
-
     font-family: 'Caligna Free';
     src: url('styles/caligna-free.ttf') format('truetype');
-
     font-family: 'Kanopi Brazil';
     src: url('styles/kanopibrazil-regular.otf') format('truetype');
-
     font-family: 'Sergio Trendy';
     src: url('styles/sergio-trendy.ttf') format('truetype');
-
     /* font-family: 'Pinyon Script';
     src: url('styles/pinyonscript-regular.ttf'); */
 }
-
 /* 'Poppins', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 /* 'Pinyon Script', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-
 /* body {
     padding: var(--main-padding);
 } */
-
 h1 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--h1-type);
 }
-
 .suggest-movie {
     padding-left: var(--main-padding);
     padding-right: var(--main-padding);
 }
-
 body {
     background-color: #090D0C;
     color: #F3F0EA;
 }
-
 /* ------------- Power button to enter Suggest screen ------------- */
 .enter {
     display: flex;
@@ -47,7 +36,6 @@ body {
     align-items: center; /* Center vertically */
     height: 100vh; /* Set the height of the container to be equal to the viewport height */
 }
-
 .enter-button {
     background-color: #AB3A25;
     width: var(--button-size);
@@ -61,15 +49,12 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .enter-button:hover {
     background-color: #FF5233;
 }
-
 .enter-button:active {
     border-color: white;
 }
-
 /* ------------- About the site ------------- */
 .about {
     background-image: url("static-tv.jpeg");
@@ -77,20 +62,16 @@ body {
     background-position: center;
     background-repeat: no-repeat; */
 }
-
 .about p {
     font-family: 'Poppins', sans-serif;
 }
-
 .filter-year p,
 .text p {
     font-size: var(--h2-type);
 }
-
 .label {
     font-size: var(--about-type);
 }
-
 hr {
     border: none; /* Remove default border */
     height: 2px; /* Set the height */
@@ -98,7 +79,6 @@ hr {
     margin-top: calc(0.5 * var(--h2-type));
     margin-bottom: var(--h2-type);
 }
-
 .white-line {
     border: none; /* Remove default border */
     height: 2px; /* Set the height */
@@ -106,19 +86,16 @@ hr {
     margin-top: var(--h2-type);
     margin-bottom: var(--h2-type);
 }
-
 /* ------------- Filters: Genre ------------- */
 .filter-genre {
     display: flex;
     flex-direction: column;
     padding-bottom: var(--genre-padding);
 }
-
 .filter-genre label {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-p);
 }
-
 /* ------------- Filters: Year ------------- */
 .label {
     font-family: 'Poppins', sans-serif;
@@ -127,7 +104,6 @@ hr {
     align-items: center; /* Align items vertically */
     color: white;
 }
-
 .container {
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -140,12 +116,10 @@ hr {
     -ms-user-select: none;
     user-select: none;
 }
-
 .container p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--year-type);
 }
-
 .container .checkmark:after {
     content: "\2713"; /* Unicode checkmark character */
     color: black; /* Set the color to black */
@@ -154,16 +128,13 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
-
 .filter-year {
     position: relative;
 }
-
 .toggle-list {
     position: absolute;
     top: 100%; /* Position the toggle-list below the label */
@@ -175,34 +146,28 @@ hr {
     padding: 5px 0;
     display: none; /* Initially hide the toggle-list */
 }
-
-
 .filter-year .toggle-list {
     display: none; /* Hide the list by default */
 }
-
 .filter-year.active .toggle-list {
     display: block; /* Show the list when the filter-year is active */
 }
-
 .filter-year .label {
     cursor: pointer; /* Change cursor to pointer on hover */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .filter-year .arrow {
     font-size: var(--type-p);
 }
-
 .filter-year.active .arrow {
     transform: rotate(270deg); /* Rotate arrow when filter-year is active */
 }
-
 /* ------------- Suggest A Movie ------------- */
 #suggest-button {
     font-family: 'Poppins', sans-serif;
+    font-size: calc(1 * var(--h2-type));
     padding-top: var(--suggest-padding);
     padding-bottom: var(--suggest-padding);
     padding-left: calc(2 * var(--suggest-padding));
@@ -214,59 +179,46 @@ hr {
     color: black;
     background: white;
 }
-
 #suggest-button:active {
     background: #FCECA4;
 }
-
 /* ------------- Movie Suggested ------------- */
 .movie {
     display: none; /* Hide the movie section by default */
     background-color: black;
 }
-
 .movie.active {
     display: block; /* Show the movie section when it has the "active" class*/
     margin-left: var(--main-padding);
     margin-right: var(--main-padding);
 }
-
-.exit-button {
+.exit-button,
+.refresh-button {
     width: 80px; /* Adjust the size as needed */
     height: 80px; /* Adjust the size as needed */
     border-radius: 50%; /* Make the button a circle */
     border: 4px solid white;
     text-align: center;
 }
-
-#refresh-button {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--type-p);
-    color: white;
+.refresh-button {
+    background-color: white;
 }
-
 .movie-info {
     background-color: white;
 }
-
-.movie-statistics p,
 .movie-info p {
     font-family: 'Poppins', sans-serif;
     color: black;
-    font-size: var(--type-p);
 }
-
 .plot p {
     font-size: var(--movie-info-type);
 }
-
 hr {
     border: none;
     height: 3px;
     background-color: black; 
     margin: 20px 0;
 }
-
 .title {
     font-family: 'Poppins', sans-serif;
     font-size: var(--title-type);
@@ -274,23 +226,14 @@ hr {
     text-transform: uppercase;
     font-weight: bold;
 }
-
 .movie-statistics {
     display: flex;
     flex-wrap: wrap;
     max-width: 100vw;
 }
-
-.streaming {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--type-p);
-    color: black;
-}
-
 @media (min-width: 320px) {
     :root {
-        --type-p: 40px;
-
+        --type-p: 50px;
         --h1-type: calc(3.3 * var(--type-p));
         --h2-type: calc(1.2 * var(--type-p));
         --type-year-label: calc(1.5 * var(--type-p));
@@ -298,9 +241,8 @@ hr {
         --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: 40px;
-
+        --movie-statistics-type: 50px;
         --button-size: 150px;
-
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -309,33 +251,28 @@ hr {
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
     }
-
     .filter-year {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
         width: 100vw;
     }
-
     .suggestion-tablet {
         display: none;
     }
-
     .suggestion-desktop {
         display: none;
     }
-
     .suggestion-mobile {
         display: block;
         position: fixed; /* Fixed positioning to cover the whole screen */
         top: 0;
         left: 0;
         width: 100%; /* Take up the entire width of the screen */
-        height: 100vh; /* Take up the entire height of the screen */
+        height: 100%; /* Take up the entire height of the screen */
         z-index: 9999; /* Ensure it appears on top of other content */
         background-color: black; /* Semi-transparent white background */
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
     }
-
     .intro-desktop {
         display: none;
     }
@@ -347,24 +284,15 @@ hr {
     }
 
     h1 {
+        line-height: 100%;
+        max-width: 90vw;
         padding-top: var(--main-padding);
         padding-right: var(--main-padding);
     }
-
     .about {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
     }
-
-    .filter-year {
-        width: 100vw;
-        padding-left: var(--main-padding);
-    }
-
-    .filter-year.active .toggle-list {
-        margin-left: var(--main-padding);
-    }
-
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
     .container {
@@ -424,22 +352,18 @@ hr {
         z-index: 1000;
         background-color: black;
     }
-
     .exit-button {
         font-size: 40px;
         font-family: 'Popppins', sans-serif;
     }
-
     .refresh-button {
         justify-content: center;
         align-items: center;
     }
-
     .refresh-button img {
         width: 60px;
         height: 60px;
     }
-
     .movie-title-poster {
         display: flex;
         align-items: center; /* Vertically center the items */
@@ -451,78 +375,56 @@ hr {
         max-width: 100%; /* Ensure the poster doesn't exceed its container width */
         max-height: 100%; /* Ensure the poster doesn't exceed its container height */
     }
-
     .title {
-        line-height: 110%;
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 25px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-bottom: 50px;
     }
-
     .movie-statistics, 
     .plot,
     .movie-people,
     .streaming {
         padding-left: 50px;
         padding-right: 50px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
-
     .movie-statistics p {
-        border: 2px solid;
+        padding-left: 20px;
+        font-size: var(--movie-statistics-type);
+        border: 1px solid;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 30px;
         padding-right: 30px;
         margin-top: 20px;
-        margin-right: 20px;
+        margin-left: 20px;
         display: inline-block;
         box-sizing: border-box;
         justify-content: center;
     }
-
+    .title {
+        line-height: 110%;
+    }
     .poster {
         margin-right: auto;
     }
-
     img {
         height: 40vh;
         width: 50vw;
     }
-
-    .streaming-link {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 30vw;
-        padding: 10px;
-        text-align: center;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-bottom: 50px;
-    }
-
     .streaming {
         background-color: #AFEBA0;
-        padding-top: 50px;
-        padding-bottom: 50px;
     }
 }
-
 @media (min-width: 1200px) {
     :root {
-        --type-p: 18px;
-
+        --type-p: 20px;
         --h1-type: calc(3 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --year-type: 20px;
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: var(--type-p);
-
+        --movie-statistics-type: 15px;
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -537,20 +439,16 @@ hr {
         display: flex;
         align-items: center;
     }
-
     .intro-desktop {
         display: block;
     }
-
     .about {
         width: 100%;
         display: block;
     }
-
     .intro-mobile {
         display: none;
     }
-
     .header-top {
         padding-bottom: 20px;
     }
@@ -561,10 +459,6 @@ hr {
         width: 100%;
     }
     
-    .filter-year.active .toggle-list {
-        margin-left: 0;
-    }
-
     .filters,
     .text, 
     .suggest-movie {
@@ -582,29 +476,23 @@ hr {
     .suggest-movie {
         padding: 20px;
     }
-
     .filters {
         padding-top: 20px;
         align-items: center;
     }
-
     .suggest-movie {
         background-color: white;
         width: 50vw;
     }
-
     .text {
         max-width: 35vw;
     }
-
     .movie {
         padding-top: 20px;
     }
-
     .suggestion-tablet {
         display: none;
     }
-
     .suggestion-mobile {
         display: none;
     }
@@ -612,23 +500,19 @@ hr {
     .suggestion-desktop {
         display: block;
     }
-
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
     .container {
         padding-left: calc(1.5 * var(--year-type));
         margin-top: calc(0.8 * var(--main-padding));
     }
-
     .header-top {
         align-items: left;
     }
-
     .filter-year {
         width: 30vw;
         padding-left: 20px;
     }
-
     .toggle-list {
         padding: 20px;
         width: 100%;
@@ -638,7 +522,6 @@ hr {
         border-top: none; /* Remove the top border */
         border-radius: 0 0 5px 5px;
     }
-
     .container .checkmark:after {
         content: "\2713"; /* Unicode checkmark character */
         font-size: 20px; /* Adjust the size of the checkmark */
@@ -648,7 +531,6 @@ hr {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
     .title,
     .movie-statistics, 
     .plot,
@@ -659,21 +541,17 @@ hr {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
     .plot,
     .movie-people,
     .streaming {
         font-size: var(--type-p);
     }
-
     .movie {
         flex: 1; /* Make the movie section flexible */
     }
-
     .movie-info {
         display: grid;
     }
-
     .movie-left,
     .title,
     .movie-statistics,
@@ -684,30 +562,24 @@ hr {
         position: relative;
         border: 1px solid black;
     }
-
     .movie-left {
         max-width: 35vw;
     }
-
     .movie-right {
         flex: 1;
     }
-
     .movie-below {
         display: flex;
     }
-
     .movie-statistics p {
         margin-top: 0;
         margin-left: 0;
         margin-right: 20px;
         border: 2px solid;
     }
-
     .title {
         line-height: 110%;
     }
-
     img {
         width: 100%;
         height: 100%;
