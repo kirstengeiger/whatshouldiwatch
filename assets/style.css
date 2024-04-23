@@ -202,11 +202,6 @@ hr {
     margin: 20px 0;
 }
 
-/* Entire movie container */
-.movie-info {
-    background-color: white;
-}
-
 .movie-info p {
     font-family: 'Poppins', sans-serif;
     color: black;
@@ -376,6 +371,11 @@ hr {
 
     /* ------------- Movie Suggested: Info ------------- */
 
+    /* Entire movie container */
+    .movie-info {
+        background-color: white;
+    }
+
     /* Top bar */
     .top-bar {
         padding: 30px;
@@ -475,14 +475,14 @@ hr {
 
 @media (min-width: 1200px) {
     :root {
-        --type-p: 20px;
+        --type-p: 15px;
         --h1-type: calc(3 * var(--type-p));
         --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --year-type: 20px;
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: var(--type-p);
-        --movie-statistics-type: 15px;
+        --movie-statistics-type: 13px;
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -564,6 +564,18 @@ hr {
         display: block;
     }
 
+    /* Suggest Movie button */
+    .suggest-movie {
+        position: relative;
+        margin-bottom: 0;
+        background-color: white;
+        width: 50vw;
+    }
+    
+    .text, 
+    .suggest-movie {
+        padding: 20px;
+    }
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
@@ -596,42 +608,40 @@ hr {
     }
 
     /* ------------- Movie Suggested: Info ------------- */
-    /* .movie {
-        height: 70vh;
-    } */
-
+    .suggested-movie,
+    .suggestion-desktop {
+        height: 100%;
+        /* Add any additional styling properties to match dimensions */
+        margin: 0; /* Match margins */
+        border-radius: 30px; /* Match border radius */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    
     .movie {
         display: block; /* Hide the movie section by default */
-        background-image: url('images/audience.jpeg');
+        background-image: url('https://i0.wp.com/css-tricks.com/wp-content/uploads/2022/11/tv-static-gif-7.gif?resize=600%2C400&ssl=1');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         margin: var(--main-padding);
         border-radius: 30px;
-        height: 100vh;
+        height: 60vh;
+    }
+
+    .movie.suggestion-active {
+        background-image: none;
     }
     
-    @supports not (background-image: url('test.webp')) {
-        .movie {
-            background-image: url('images/tv-static.jpg'); /* Fallback JPEG image */
-        }
-    }
+    /* #suggested-movie {
+        height: 100%;
+        overflow-y: auto; /* Enable vertical scrolling if needed */
+    /* } */
 
-
-    /* Positioning suggested movie */
-    .suggest-movie {
-        position: relative;
-        margin-bottom: 0;
-    }
-
-    .text, 
-    .suggest-movie {
-        padding: 20px;
-    }
-
-    .suggest-movie {
-        background-color: white;
-        width: 50vw;
+    .movie-info {
+        display: grid;
+        height: 60vh;
+        border-radius: 30px;
+        background-color: grey;
     }
 
     /* Spacing Content */
@@ -640,10 +650,10 @@ hr {
     .plot,
     .movie-people,
     .streaming {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .movie-left,
@@ -668,11 +678,6 @@ hr {
         line-height: 110%;
     }
 
-    .movie {
-        padding-top: 20px;
-        flex: 1; /* Make the movie section flexible */
-    }
-
     .text {
         max-width: 35vw;
     }
@@ -684,24 +689,32 @@ hr {
 
     /* Movie Poster */
     .movie-left {
-        max-width: 35vw;
+        max-width: 70vw;
     }
 
     /* All the movie info */
     .movie-right {
         flex: 1;
-    }
-
-    .movie-info {
-        display: grid;
+        align-items: center; 
+        background-color: white;
+        right: 0;
+        margin: var(--main-padding);
+        padding: var(--main-padding);
+        border-radius: 15px;
+        width: 30vw;
     }
 
     /* Movie statistics */
     .movie-statistics p {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin-top: 0;
         margin-left: 0;
-        margin-right: 20px;
-        border: 2px solid;
+        margin-right: 10px;
+        border: 1px solid;
+        border-radius: 30px;
     }
 
     /* Movie poster */
@@ -712,5 +725,7 @@ hr {
         position: absolute; /* Position the image absolutely within its container */
         top: 0; /* Align the image to the top of the container */
         left: 0; /* Align the image to the left of the container */
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }

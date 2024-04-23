@@ -172,9 +172,9 @@ function handleExitButtonClick(event) {
 // Add click event listener to the document and delegate it to exit buttons
 document.addEventListener('click', handleExitButtonClick);
 
-// Add event listener to toggle movie section visibility
-const suggestButton = document.getElementById('suggest-button-mobile');
+// Add event listener to toggle movie section visibility and hide background image
+const suggestButton = document.getElementById('suggest-button-desktop');
 const movieSection = document.querySelector('.movie');
 suggestButton.addEventListener('click', function() {
-    movieSection.classList.add('active'); // Add the "active" class to show the movie section
+    movieSection.classList.add('suggestion-active'); // Add class to hide background image
 });
