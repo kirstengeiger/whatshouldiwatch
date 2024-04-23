@@ -17,6 +17,7 @@
 /* body {
     padding: var(--main-padding);
 } */
+
 h1 {
     font-family: 'Poppins', sans-serif;
     font-size: var(--h1-type);
@@ -231,6 +232,7 @@ hr {
     flex-wrap: wrap;
     max-width: 100vw;
 }
+
 @media (min-width: 320px) {
     :root {
         --type-p: 50px;
@@ -273,6 +275,7 @@ hr {
         background-color: black; /* Semi-transparent white background */
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
     }
+
     .intro-desktop {
         display: none;
     }
@@ -281,6 +284,15 @@ hr {
         display: block;
         position: relative;
         min-height: 100vh;
+    }
+    
+    .suggest-movie {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
     }
 
     h1 {
