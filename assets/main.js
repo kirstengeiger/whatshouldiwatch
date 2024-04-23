@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </section>
                         </li>
 
-                        <li class="suggestion-desktop">
+                        <li class="suggestion-tablet">
                             <section class="movie-info">
                                 <section class="movie-top">
                                     <h1 class="title">${randomEntryData.title}</h1>
@@ -83,6 +83,34 @@ document.addEventListener("DOMContentLoaded", function() {
                                         <img class="poster" src="${randomEntryData.poster}">
                                     </section>
                                     <section class="movie-right">
+                                        <section class="movie-statistics">
+                                                <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
+                                                <p class="genre">${randomEntryData.genre}</p>
+                                                <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                                                <p class="runTime"><em>${randomEntryData.runTime}</em></p>
+                                        </section>
+                                        <hr>
+                                        <p class="plot">${randomEntryData.plot}</p>
+                                        <hr>
+                                        <section class="movie-people">
+                                            <p class="director">Directed by ${randomEntryData.director}</p>
+                                            <p class="starring">Starring ${randomEntryData.stars}</p>
+                                        </section>
+                                        <hr>
+                                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                                    </section>
+                                </section>
+                            </section
+                        </li>
+
+                        <li class="suggestion-desktop">
+                            <section class="movie-info">
+                                <section class="movie-below">
+                                    <section class="movie-left">
+                                        <img class="poster" src="${randomEntryData.poster}">
+                                    </section>
+                                    <section class="movie-right">
+                                        <h1 class="title">${randomEntryData.title}</h1>
                                         <section class="movie-statistics">
                                                 <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
                                                 <p class="genre">${randomEntryData.genre}</p>
