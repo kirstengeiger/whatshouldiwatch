@@ -80,6 +80,14 @@ body {
 
 .about p {
     font-family: 'Poppins', sans-serif;
+}
+
+.filter-year p,
+.text p {
+    font-size: var(--h2-type);
+}
+
+.label {
     font-size: var(--about-type);
 }
 
@@ -195,7 +203,7 @@ hr {
 /* ------------- Suggest A Movie ------------- */
 #suggest-button {
     font-family: 'Poppins', sans-serif;
-    font-size: var(--h2-type);
+    font-size: calc(1 * var(--h2-type));
     padding-top: var(--suggest-padding);
     padding-bottom: var(--suggest-padding);
     padding-left: calc(2 * var(--suggest-padding));
@@ -219,6 +227,8 @@ hr {
 
 .movie.active {
     display: block; /* Show the movie section when it has the "active" class*/
+    margin-left: var(--main-padding);
+    margin-right: var(--main-padding);
 }
 
 .exit-button,
@@ -471,12 +481,12 @@ hr {
         --type-p: 20px;
 
         --h1-type: calc(3 * var(--type-p));
-        --h2-type: calc(1.5 * var(--type-p));
+        --h2-type: calc(1 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
-        --year-type: 30px;
+        --year-type: 20px;
         --title-type: calc(2 * var(--type-p));
         --movie-info-type: var(--type-p);
-        --movie-statistics-type: 20px;
+        --movie-statistics-type: 15px;
 
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
@@ -497,6 +507,11 @@ hr {
         display: block;
     }
 
+    .about {
+        width: 100%;
+        display: block;
+    }
+
     .intro-mobile {
         display: none;
     }
@@ -508,6 +523,7 @@ hr {
     .header-bottom {
         margin-top: 10px; /* Adjust margin to control spacing between header-top and header-bottom */
         display: flex; /* Use flexbox layout */
+        width: 100%;
     }
     
     .filters,
@@ -525,25 +541,20 @@ hr {
 
     .filters {
         padding-top: 20px;
-    }
-
-    .filter-year.active .toggle-list {
-        /* Your existing styles */
-        border: 1px solid white;
-        border-top: none; /* Remove the top border */
-        border-radius: 0 0 5px 5px; /* Add border radius to the bottom corners */
+        align-items: center;
     }
 
     .suggest-movie {
         background-color: #eee;
+        width: 50vw;
     }
 
     .text {
-        max-width: 40vw;
+        max-width: 35vw;
     }
 
     .movie {
-        padding: 20px;
+        padding-top: 20px;
     }
 
     .suggestion-tablet {
@@ -577,6 +588,11 @@ hr {
     .toggle-list {
         padding: 20px;
         width: 100%;
+        display: flex;
+        justify-content: center; /* Center the line horizontally */
+        border: 1px solid #ccc;
+        border-top: none; /* Remove the top border */
+        border-radius: 0 0 5px 5px;
     }
 
     .container .checkmark:after {
@@ -600,6 +616,12 @@ hr {
         padding-bottom: 20px;
     }
 
+    .plot,
+    .movie-people,
+    .streaming {
+        font-size: var(--type-p);
+    }
+
     .movie {
         flex: 1; /* Make the movie section flexible */
     }
@@ -608,9 +630,19 @@ hr {
         display: grid;
     }
 
-    .movie-left {
+    .movie-left,
+    .title,
+    .movie-statistics,
+    .plot,
+    .movie-people,
+    .streaming {
         flex: 1;
         position: relative;
+        border: 1px solid black;
+    }
+
+    .movie-left {
+        max-width: 35vw;
     }
 
     .movie-right {
@@ -619,6 +651,13 @@ hr {
 
     .movie-below {
         display: flex;
+    }
+
+    .movie-statistics p {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 20px;
+        border: 2px solid;
     }
 
     .title {

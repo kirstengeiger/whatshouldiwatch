@@ -129,15 +129,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                                 <p class="yearReleased"><time>${randomEntryData.year}</time></p>
                                                 <p class="runTime"><em>${randomEntryData.runTime}</em></p>
                                         </section>
-                                        <hr>
                                         <p class="plot">${randomEntryData.plot}</p>
-                                        <hr>
                                         <section class="movie-people">
                                             <p class="director">Directed by ${randomEntryData.director}</p>
                                             <p class="starring">Starring ${randomEntryData.stars}</p>
                                         </section>
-                                        <hr>
-                                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
+                                        <a href="${randomEntryData.streamLink}"><p class="streaming">Streaming on ${randomEntryData.streamPlatform}</p></a>
                                     </section>
                                 </section>
                             </section
