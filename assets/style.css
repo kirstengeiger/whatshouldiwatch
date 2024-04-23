@@ -174,10 +174,7 @@ hr {
 /* ------------- Movie Suggested: Top Bar ------------- */
 
 /* Hides movie section before .suggest-movie button is clicked */
-.movie {
-    display: none; /* Hide the movie section by default */
-    background-color: black;
-}
+
 
 /* Shows movie section once .suggest-movie button is clicked */
 .movie.active {
@@ -234,6 +231,11 @@ hr {
 /* Plot */
 .plot p {
     font-size: var(--movie-info-type);
+}
+
+/* People */
+.director {
+    padding-bottom: calc(0.5 * var(--type-p));
 }
 
 
@@ -582,6 +584,7 @@ hr {
         border-radius: 0 0 5px 5px;
         margin-top: 36px;
     }
+
     .container .checkmark:after {
         content: "\2713"; /* Unicode checkmark character */
         font-size: 20px; /* Adjust the size of the checkmark */
@@ -593,7 +596,28 @@ hr {
     }
 
     /* ------------- Movie Suggested: Info ------------- */
+    /* .movie {
+        height: 70vh;
+    } */
+
+    .movie {
+        display: block; /* Hide the movie section by default */
+        background-image: url('images/audience.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: var(--main-padding);
+        border-radius: 30px;
+        height: 100vh;
+    }
     
+    @supports not (background-image: url('test.webp')) {
+        .movie {
+            background-image: url('images/tv-static.jpg'); /* Fallback JPEG image */
+        }
+    }
+
+
     /* Positioning suggested movie */
     .suggest-movie {
         position: relative;
@@ -630,7 +654,7 @@ hr {
     .streaming {
         flex: 1;
         position: relative;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     .plot,
