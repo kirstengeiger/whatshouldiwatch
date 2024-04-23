@@ -351,6 +351,16 @@ hr {
         padding-right: var(--main-padding);
     }
 
+    .filter-year {
+        width: 100vw;
+        padding-left: var(--main-padding);
+
+    }
+
+    .filter-year.active .toggle-list {
+        margin-left: var(--main-padding);
+    }
+
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
     .container {
@@ -536,6 +546,10 @@ hr {
         width: 100%;
     }
     
+    .filter-year.active .toggle-list {
+        margin-left: 0;
+    }
+
     .filters,
     .text, 
     .suggest-movie {
