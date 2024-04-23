@@ -10,52 +10,21 @@
     /* font-family: 'Pinyon Script';
     src: url('styles/pinyonscript-regular.ttf'); */
 }
+
 /* 'Poppins', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* 'Pinyon Script', cursive; */
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-/* body {
-    padding: var(--main-padding);
-} */
 
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--h1-type);
-}
-.suggest-movie {
-    padding-left: var(--main-padding);
-    padding-right: var(--main-padding);
-}
 body {
     background-color: #090D0C;
     color: #F3F0EA;
 }
-/* ------------- Power button to enter Suggest screen ------------- */
-.enter {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Set the height of the container to be equal to the viewport height */
-}
-.enter-button {
-    background-color: #AB3A25;
-    width: var(--button-size);
-    height: var(--button-size);
-    padding: 0; /* Remove padding */
-    color: #090D0C;
+
+/* ------------- Site title ------------- */
+h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: var(--type-p);
-    border-radius: 50%; /* Make the button a circle */
-    display: flex; /* Ensure content is centered vertically and horizontally */
-    justify-content: center;
-    align-items: center;
+    font-size: var(--h1-type);
 }
-.enter-button:hover {
-    background-color: #FF5233;
-}
-.enter-button:active {
-    border-color: white;
-}
+
 /* ------------- About the site ------------- */
 .about {
     background-image: url("static-tv.jpeg");
@@ -63,16 +32,12 @@ body {
     background-position: center;
     background-repeat: no-repeat; */
 }
+
 .about p {
     font-family: 'Poppins', sans-serif;
 }
-.filter-year p,
-.text p {
-    font-size: var(--h2-type);
-}
-.label {
-    font-size: var(--about-type);
-}
+
+/* ------------- White Line ------------- */
 hr {
     border: none; /* Remove default border */
     height: 2px; /* Set the height */
@@ -80,6 +45,7 @@ hr {
     margin-top: calc(0.5 * var(--h2-type));
     margin-bottom: var(--h2-type);
 }
+
 .white-line {
     border: none; /* Remove default border */
     height: 2px; /* Set the height */
@@ -87,17 +53,19 @@ hr {
     margin-top: var(--h2-type);
     margin-bottom: var(--h2-type);
 }
-/* ------------- Filters: Genre ------------- */
-.filter-genre {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: var(--genre-padding);
+
+/* ------------- Year Filter ------------- */
+.filter-year p,
+.text p {
+    font-size: var(--h2-type);
 }
-.filter-genre label {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--type-p);
+
+
+.filter-year {
+    position: relative;
 }
-/* ------------- Filters: Year ------------- */
+
+/* Year Title */
 .label {
     font-family: 'Poppins', sans-serif;
     font-size: var(--type-year-label);
@@ -105,6 +73,36 @@ hr {
     align-items: center; /* Align items vertically */
     color: white;
 }
+
+/* Hides toggle list before clicked */
+.filter-year .toggle-list {
+    display: none; 
+}
+
+/* Shows toggle list after clicked */
+.filter-year .label {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Arrow next to the year label */
+.filter-year .arrow {
+    font-size: var(--type-p);
+}
+
+.filter-year.active .arrow {
+    transform: rotate(270deg); /* Rotate arrow when filter-year is active */
+}
+
+/* Decade label */
+.container p {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--year-type);
+}
+
+/* White check-box */
 .container {
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -117,10 +115,8 @@ hr {
     -ms-user-select: none;
     user-select: none;
 }
-.container p {
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--year-type);
-}
+
+/* After box is checked */
 .container .checkmark:after {
     content: "\2713"; /* Unicode checkmark character */
     color: black; /* Set the color to black */
@@ -129,41 +125,32 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
-.filter-year {
-    position: relative;
-}
+
+/* Styling for the actual toggle list once it's clicked */
 .toggle-list {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1; /* Has toggle-list appears on top of other content */
+    z-index: 1; /* Has toggle-list appear on top of other content */
     background-color: #090D0C;
     border-top: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
     display: none;
 }
-.filter-year .toggle-list {
-    display: none; 
+
+/* ------------- Suggest A Movie Button ------------- */
+
+.suggest-movie {
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
 }
 
-.filter-year .label {
-    cursor: pointer; /* Change cursor to pointer on hover */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.filter-year .arrow {
-    font-size: var(--type-p);
-}
-.filter-year.active .arrow {
-    transform: rotate(270deg); /* Rotate arrow when filter-year is active */
-}
-/* ------------- Suggest A Movie ------------- */
 #suggest-button-mobile,
 #suggest-button-desktop {
     font-family: 'Poppins', sans-serif;
@@ -179,19 +166,27 @@ hr {
     color: black;
     background: white;
 }
+
 #suggest-button:active {
     background: #FCECA4;
 }
-/* ------------- Movie Suggested ------------- */
+
+/* ------------- Movie Suggested: Top Bar ------------- */
+
+/* Hides movie section before .suggest-movie button is clicked */
 .movie {
     display: none; /* Hide the movie section by default */
     background-color: black;
 }
+
+/* Shows movie section once .suggest-movie button is clicked */
 .movie.active {
     display: block; /* Show the movie section when it has the "active" class*/
     margin-left: var(--main-padding);
     margin-right: var(--main-padding);
 }
+
+/* Exit button */
 .exit-button {
     width: 80px; /* Adjust the size as needed */
     height: 80px; /* Adjust the size as needed */
@@ -200,22 +195,27 @@ hr {
     text-align: center;
 }
 
-.movie-info {
-    background-color: white;
-}
-.movie-info p {
-    font-family: 'Poppins', sans-serif;
-    color: black;
-}
-.plot p {
-    font-size: var(--movie-info-type);
-}
+/* ------------- Movie Suggested: Info ------------- */
+
+/* Black line separating the sections */
 hr {
     border: none;
     height: 3px;
     background-color: black; 
     margin: 20px 0;
 }
+
+/* Entire movie container */
+.movie-info {
+    background-color: white;
+}
+
+.movie-info p {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+/* Movie title */
 .title {
     font-family: 'Poppins', sans-serif;
     font-size: var(--title-type);
@@ -223,11 +223,19 @@ hr {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+/* Movie statistics */
 .movie-statistics {
     display: flex;
     flex-wrap: wrap;
     max-width: 100vw;
 }
+
+/* Plot */
+.plot p {
+    font-size: var(--movie-info-type);
+}
+
 
 @media (min-width: 320px) {
     :root {
@@ -250,20 +258,21 @@ hr {
         --suggest-radius: 100px;
     }
 
-    .filter-year {
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-        width: 100vw;
-    }
-
+    /* Hides tablet design */
     .suggestion-tablet {
         display: none;
     }
     
+    /* Hides desktop design */
     .suggestion-desktop {
         display: none;
     }
 
+    .intro-desktop {
+        display: none;
+    }
+
+    /* Shows mobile design */
     .suggestion-mobile {
         display: block;
         position: fixed; /* Fixed positioning to cover the whole screen */
@@ -276,16 +285,27 @@ hr {
         overflow-y: auto; /* Enable vertical scrolling if content exceeds screen height */
     }
 
-    .intro-desktop {
-        display: none;
-    }
-
     .intro-mobile {
         display: block;
         position: relative;
         min-height: 100vh;
     }
+
+    /* About section: title and intro */
+    .about {
+        padding-top: var(--main-padding);
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding); 
+    }
+
+    /* Year label */
+    .filter-year {
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+        width: 100vw;
+    }
     
+    /* Suggest Movie button */
     .suggest-movie {
         position: fixed;
         bottom: 0;
@@ -293,29 +313,12 @@ hr {
         width: 100%;
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
+        margin-bottom: var(--main-padding);
     }
 
-    .title {
-        line-height: 100%;
-        max-width: 90vw;
-        padding-top: var(--main-padding);
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-    }
-
-    .about {
-        padding-top: var(--main-padding);
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding); 
-    }
-
+    /* Select Years */
     .filter-year.active .toggle-list {
-        display: block
-    }
-
-    .filter-year {
-        display: flex;
-        flex-direction: column;
+        display: block;
     }
 
     .toggle-list {
@@ -369,13 +372,9 @@ hr {
         font-size: 50px; /* Adjust the size of the checkmark */
     }
 
-    .suggest-movie {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        margin-bottom: var(--main-padding);
-    }
+    /* ------------- Movie Suggested: Info ------------- */
 
+    /* Top bar */
     .top-bar {
         padding: 30px;
         display: flex;
@@ -387,11 +386,13 @@ hr {
         background-color: black;
     }
 
+    /* Exit screen */
     .exit-button {
         font-size: 40px;
         font-family: 'Popppins', sans-serif;
     }
 
+    /* Refresh button */
     .refresh-button {
         justify-content: center;
         align-items: center;
@@ -399,22 +400,7 @@ hr {
         font-size: var(--type-p);
     }
 
-    .movie-title-poster {
-        display: flex;
-        align-items: center; /* Vertically center the items */
-    }
-    
-    .poster {
-        flex: 1; /* Allow the poster to grow and fill available space */
-        object-fit: contain; /* Maintain aspect ratio and fit within the container */
-        max-width: 100%; /* Ensure the poster doesn't exceed its container width */
-        max-height: 100%; /* Ensure the poster doesn't exceed its container height */
-    }
-
-    .title {
-        padding-bottom: 50px;
-    }
-
+    /* Spacing for movie info below top bar */
     .movie-statistics, 
     .plot,
     .movie-people,
@@ -425,6 +411,37 @@ hr {
         padding-bottom: 50px;
         font-size: var(--type-p);
     }
+
+    /* Title */
+    .title {
+        line-height: 100%;
+        max-width: 90vw;
+        padding-top: var(--main-padding);
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+        padding-bottom: 50px;
+    }
+
+    /* Poster */
+    .movie-title-poster {
+        display: flex;
+        align-items: center; /* Vertically center the items */
+        margin-right: auto;
+    }
+    
+    .poster {
+        flex: 1; /* Allow the poster to grow and fill available space */
+        object-fit: contain; /* Maintain aspect ratio and fit within the container */
+        max-width: 100%; /* Ensure the poster doesn't exceed its container width */
+        max-height: 100%; /* Ensure the poster doesn't exceed its container height */
+    }
+
+    img {
+        height: 40vh;
+        width: 50vw;
+    }
+
+    /* Movie statistics */
     .movie-statistics p {
         padding-left: 20px;
         font-size: var(--movie-statistics-type);
@@ -439,16 +456,8 @@ hr {
         box-sizing: border-box;
         justify-content: center;
     }
-    .title {
-        line-height: 110%;
-    }
-    .poster {
-        margin-right: auto;
-    }
-    img {
-        height: 40vh;
-        width: 50vw;
-    }
+
+    /* Streaming link */
     .stream-link {
         position: fixed;
         bottom: 0;
@@ -456,6 +465,7 @@ hr {
         padding: var(--main-padding);
         color: black;
     }
+
     .streaming {
         background-color: #AFEBA0;
     }
@@ -480,32 +490,55 @@ hr {
         --suggest-radius: 100px;
         --enter-radius: 300px;
     }
-    
-    .intro {
-        display: flex;
-        align-items: center;
-    }
-    .intro-desktop {
-        display: block;
-    }
-    .about {
-        width: 100%;
-        display: block;
-    }
+
+    /* Hides mobile design */
     .intro-mobile {
         display: none;
     }
 
-    .header-top {
-        padding-bottom: 20px;
+    .suggestion-tablet {
+        display: none;
     }
     
+    .suggestion-mobile {
+        display: none;
+    }
+    
+
+    /* Shows desktop design */
+    .intro-desktop {
+        display: block;
+    }
+
+    .suggestion-desktop {
+        display: block;
+    }
+    
+    /* Intro */
+    .intro {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Title */
+    .header-top {
+        padding-bottom: 20px;
+        align-items: left;
+    }
+    
+    /* About the site */
     .header-bottom {
         margin-top: 10px; 
         display: flex;
         width: 100%;
     }
     
+    .about {
+        width: 100%;
+        display: block;
+    }
+    
+    /* About, Year, and Suggest Movie bar */
     .filters,
     .text, 
     .suggest-movie {
@@ -514,47 +547,10 @@ hr {
         align-items: center;
     }
 
-    .suggest-movie {
-        position: relative;
-        margin-bottom: 0;
-    }
-
-    .text, 
-    .suggest-movie {
-        padding: 20px;
-    }
+    /* ------------- Year Filter ------------- */
     .filters {
         padding-top: 20px;
         align-items: center;
-    }
-    .suggest-movie {
-        background-color: white;
-        width: 50vw;
-    }
-    .text {
-        max-width: 35vw;
-    }
-    .movie {
-        padding-top: 20px;
-    }
-    .suggestion-tablet {
-        display: none;
-    }
-    .suggestion-mobile {
-        display: none;
-    }
-    
-    .suggestion-desktop {
-        display: block;
-    }
-    /* ------------- Check Mark ------------- */
-    /* Customize the label (the container) */
-    .container {
-        padding-left: calc(1.5 * var(--year-type));
-        margin-top: calc(0.8 * var(--main-padding));
-    }
-    .header-top {
-        align-items: left;
     }
 
     .filter-year {
@@ -564,6 +560,14 @@ hr {
 
     .filter-year.active .toggle-list {
         display: block;
+    }
+
+
+    /* ------------- Check Mark ------------- */
+    /* Customize the label (the container) */
+    .container {
+        padding-left: calc(1.5 * var(--year-type));
+        margin-top: calc(0.8 * var(--main-padding));
     }
 
     .toggle-list {
@@ -588,6 +592,25 @@ hr {
         transform: translate(-50%, -50%);
     }
 
+    /* ------------- Movie Suggested: Info ------------- */
+    
+    /* Positioning suggested movie */
+    .suggest-movie {
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .text, 
+    .suggest-movie {
+        padding: 20px;
+    }
+
+    .suggest-movie {
+        background-color: white;
+        width: 50vw;
+    }
+
+    /* Spacing Content */
     .title,
     .movie-statistics, 
     .plot,
@@ -598,17 +621,7 @@ hr {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-    .plot,
-    .movie-people,
-    .streaming {
-        font-size: var(--type-p);
-    }
-    .movie {
-        flex: 1; /* Make the movie section flexible */
-    }
-    .movie-info {
-        display: grid;
-    }
+
     .movie-left,
     .title,
     .movie-statistics,
@@ -619,24 +632,55 @@ hr {
         position: relative;
         border: 1px solid black;
     }
-    .movie-left {
+
+    .plot,
+    .movie-people,
+    .streaming {
+        font-size: var(--type-p);
+    }
+
+    /* Movie title */
+    .title {
+        line-height: 110%;
+    }
+
+    .movie {
+        padding-top: 20px;
+        flex: 1; /* Make the movie section flexible */
+    }
+
+    .text {
         max-width: 35vw;
     }
-    .movie-right {
-        flex: 1;
-    }
+
+    /* Entire suggested movie section */
     .movie-below {
         display: flex;
     }
+
+    /* Movie Poster */
+    .movie-left {
+        max-width: 35vw;
+    }
+
+    /* All the movie info */
+    .movie-right {
+        flex: 1;
+    }
+
+    .movie-info {
+        display: grid;
+    }
+
+    /* Movie statistics */
     .movie-statistics p {
         margin-top: 0;
         margin-left: 0;
         margin-right: 20px;
         border: 2px solid;
     }
-    .title {
-        line-height: 110%;
-    }
+
+    /* Movie poster */
     img {
         width: 100%;
         height: 100%;
