@@ -138,21 +138,19 @@ hr {
 }
 .toggle-list {
     position: absolute;
-    top: 100%; /* Position the toggle-list below the label */
+    top: 100%;
     left: 0;
-    z-index: 1; /* Ensure the toggle-list appears on top of other content */
-    background-color: black;
+    z-index: 1; /* Has toggle-list appears on top of other content */
+    background-color: #090D0C;
     border-top: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
-    display: none; /* Initially hide the toggle-list */
+    display: none;
 }
 .filter-year .toggle-list {
-    display: none; /* Hide the list by default */
+    display: none; 
 }
-.filter-year.active .toggle-list {
-    display: block; /* Show the list when the filter-year is active */
-}
+
 .filter-year .label {
     cursor: pointer; /* Change cursor to pointer on hover */
     display: flex;
@@ -166,7 +164,8 @@ hr {
     transform: rotate(270deg); /* Rotate arrow when filter-year is active */
 }
 /* ------------- Suggest A Movie ------------- */
-#suggest-button {
+#suggest-button-mobile,
+#suggest-button-desktop {
     font-family: 'Poppins', sans-serif;
     font-size: calc(1 * var(--h2-type));
     padding-top: var(--suggest-padding);
@@ -193,17 +192,14 @@ hr {
     margin-left: var(--main-padding);
     margin-right: var(--main-padding);
 }
-.exit-button,
-.refresh-button {
+.exit-button {
     width: 80px; /* Adjust the size as needed */
     height: 80px; /* Adjust the size as needed */
     border-radius: 50%; /* Make the button a circle */
     border: 4px solid white;
     text-align: center;
 }
-.refresh-button {
-    background-color: white;
-}
+
 .movie-info {
     background-color: white;
 }
@@ -253,17 +249,21 @@ hr {
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
     }
+
     .filter-year {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
         width: 100vw;
     }
+
     .suggestion-tablet {
         display: none;
     }
+    
     .suggestion-desktop {
         display: none;
     }
+
     .suggestion-mobile {
         display: block;
         position: fixed; /* Fixed positioning to cover the whole screen */
@@ -295,16 +295,38 @@ hr {
         padding-right: var(--main-padding);
     }
 
-    h1 {
+    .title {
         line-height: 100%;
         max-width: 90vw;
         padding-top: var(--main-padding);
-        padding-right: var(--main-padding);
-    }
-    .about {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
     }
+
+    .about {
+        padding-top: var(--main-padding);
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding); 
+    }
+
+    .filter-year.active .toggle-list {
+        display: block
+    }
+
+    .filter-year {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .toggle-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+        width: 100vw;
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+    }
+
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
     .container {
@@ -364,18 +386,19 @@ hr {
         z-index: 1000;
         background-color: black;
     }
+
     .exit-button {
         font-size: 40px;
         font-family: 'Popppins', sans-serif;
     }
+
     .refresh-button {
         justify-content: center;
         align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: var(--type-p);
     }
-    .refresh-button img {
-        width: 60px;
-        height: 60px;
-    }
+
     .movie-title-poster {
         display: flex;
         align-items: center; /* Vertically center the items */
@@ -387,9 +410,11 @@ hr {
         max-width: 100%; /* Ensure the poster doesn't exceed its container width */
         max-height: 100%; /* Ensure the poster doesn't exceed its container height */
     }
+
     .title {
         padding-bottom: 50px;
     }
+
     .movie-statistics, 
     .plot,
     .movie-people,
@@ -398,11 +423,12 @@ hr {
         padding-right: 50px;
         padding-top: 50px;
         padding-bottom: 50px;
+        font-size: var(--type-p);
     }
     .movie-statistics p {
         padding-left: 20px;
         font-size: var(--movie-statistics-type);
-        border: 1px solid;
+        border: 2px solid;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 30px;
@@ -423,10 +449,18 @@ hr {
         height: 40vh;
         width: 50vw;
     }
+    .stream-link {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: var(--main-padding);
+        color: black;
+    }
     .streaming {
         background-color: #AFEBA0;
     }
 }
+
 @media (min-width: 1200px) {
     :root {
         --type-p: 20px;
@@ -461,13 +495,14 @@ hr {
     .intro-mobile {
         display: none;
     }
+
     .header-top {
         padding-bottom: 20px;
     }
     
     .header-bottom {
-        margin-top: 10px; /* Adjust margin to control spacing between header-top and header-bottom */
-        display: flex; /* Use flexbox layout */
+        margin-top: 10px; 
+        display: flex;
         width: 100%;
     }
     
@@ -521,18 +556,27 @@ hr {
     .header-top {
         align-items: left;
     }
+
     .filter-year {
         width: 30vw;
         padding-left: 20px;
     }
+
+    .filter-year.active .toggle-list {
+        display: block;
+    }
+
     .toggle-list {
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
         width: 100%;
         display: flex;
         justify-content: center; /* Center the line horizontally */
-        border: 1px solid #ccc;
-        border-top: none; /* Remove the top border */
+        border: 2px solid white;
+        /* border-top: none;  */
         border-radius: 0 0 5px 5px;
+        margin-top: 36px;
     }
     .container .checkmark:after {
         content: "\2713"; /* Unicode checkmark character */
@@ -543,6 +587,7 @@ hr {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
     .title,
     .movie-statistics, 
     .plot,

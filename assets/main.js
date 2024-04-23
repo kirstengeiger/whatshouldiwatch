@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Add event listener to the "Suggest Movie" button in intro-mobile
-    const suggestButtonMobile = document.querySelector('.intro-mobile .suggest-movie button#suggest-button');
+    const suggestButtonMobile = document.getElementById('suggest-button-mobile');
     suggestButtonMobile.addEventListener('click', suggestMovie);
 
-    // Add event listener to the "Suggest Movie" button in intro-desktop
-    const suggestButtonDesktop = document.querySelector('.intro-desktop .suggest-movie button#suggest-button');
-    suggestButtonDesktop.addEventListener('click', suggestMovie);
+    // Ensure that the DOM content related to suggest-button-desktop is fully loaded and ready before trying to attach the event listener
+    const suggestButtonDesktop = document.getElementById('suggest-button-desktop');
+    if (suggestButtonDesktop) {
+        suggestButtonDesktop.addEventListener('click', suggestMovie);
+    }
 });
 
 // Define the suggestMovie function to handle the "Suggest Movie" button click
@@ -57,7 +59,7 @@ function suggestMovie() {
                     <li class="suggestion-mobile">
                     <section class="top-bar">
                         <button class="exit-button">X</button>
-                        <button class="refresh-button"><img src="images/refreshbutton.png"></button>
+                        <button class="refresh-button">Suggest Movie</button>
                     </section>
                     <section class="movie-info">
                         <h1 class="title">${randomEntryData.title}</h1>
@@ -80,7 +82,9 @@ function suggestMovie() {
                             <p class="starring">Starring ${randomEntryData.stars}</p>
                         </section>
                         <hr>
-                        <p class="streaming"><a href="${randomEntryData.streamLink}">Watch now</a></p>
+                    </section>
+                    <section class="stream-link">
+                        <p class="streaming"><a href="${randomEntryData.streamLink}">▶</a></p>
                     </section>
                 </li>
 
@@ -169,7 +173,7 @@ function handleExitButtonClick(event) {
 document.addEventListener('click', handleExitButtonClick);
 
 // Add event listener to toggle movie section visibility
-const suggestButton = document.getElementById('suggest-button');
+const suggestButton = document.getElementById('suggest-button-mobile');
 const movieSection = document.querySelector('.movie');
 suggestButton.addEventListener('click', function() {
     movieSection.classList.add('active'); // Add the "active" class to show the movie section
