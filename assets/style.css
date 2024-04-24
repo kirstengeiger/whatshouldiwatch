@@ -9,8 +9,8 @@
 
 
 body {
-    background-color: #3B342E;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 /* ------------- Site title ------------- */
@@ -46,7 +46,6 @@ hr {
 .filters {
     border-color: black;
     align-items: center;
-
 }
 
 .filter-year {
@@ -59,12 +58,8 @@ hr {
     font-size: var(--h2-type);
     display: flex; /* Add flex display */
     align-items: center; /* Align items vertically */
-    color: black;
-    padding-top: var(--suggest-padding);
-    padding-bottom: var(--suggest-padding);
-    padding-left: var(--suggest-padding);
-    padding-right: var(--suggest-padding);
-    border-radius: var(--suggest-radius);
+    color: white;
+    padding: var(--main-padding);
 }
 
 /* Hides toggle list before clicked */
@@ -78,7 +73,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #EADFC5;
+    background-color: black;
     width: 100%;
 }
 
@@ -100,7 +95,7 @@ hr {
 .container p {
     font-family: 'Rubik', sans-serif;
     font-size: var(--year-type);
-    color: black;
+    color: white;
 }
 
 /* White check-box */
@@ -141,51 +136,27 @@ hr {
     border-top: none;
     padding: 5px 0;
     display: none;
-    background-color: #EADFC5;
+    background-color: black;
 }
 
 /* ------------- Suggest A Movie Button ------------- */
-
-.suggest-movie {
-    padding-left: var(--main-padding);
-    padding-right: var(--main-padding);
-}
-
-/* .number {
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #fff;
-    text-align: center;
-    line-height: var(--line-height-number);
-    border: 2px solid #000;
-}
-
-.text {
-    padding-left: var(--text-padding);
-} */
 
 #suggest-button-mobile,
 #suggest-button-desktop {
     font-family: 'Rubik', sans-serif;
     font-size: var(--h2-type);
-    padding-top: var(--suggest-padding);
-    padding-bottom: var(--suggest-padding);
-    padding-left: var(--suggest-padding);
-    padding-right: var(--suggest-padding);
-    border-radius: var(--suggest-radius);
+    padding: calc(2 * var(--main-padding));
     cursor: pointer;
     width: 100%;
-    color: black;
-    background: #EADFC5;
+    color: white;
+    background-color: black;
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
 #suggest-button-desktop:hover {
-    background: #F7EFDC;
+    background: white;
 }
 
 /* ------------- Movie Suggested: Top Bar ------------- */
@@ -234,7 +205,7 @@ hr {
 }
 
 .movie-statistics p {
-    font-size: var(--type-p);
+    /* font-size: var(--type-p); */
     color: gray;
 }
 
@@ -276,10 +247,7 @@ hr {
         /* --text-padding: 30px;
         --line-height-number: 65px; */
         --suggest-padding: 50px;
-        --suggest-radius: 60px;
     }
-
-    /* Hides tablet design */
     
     /* Hides desktop design */
     .suggestion-desktop {
@@ -291,10 +259,8 @@ hr {
     }
 
     .about {
-        background-image: url('https://i.pinimg.com/originals/f8/01/a3/f801a36277fef9657a41b4c5954506e1.gif');
-        /* background-color: #C2D5BF; */
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         margin-top: var(--main-padding);
         margin-left: var(--main-padding);
         margin-right: var(--main-padding);
@@ -302,9 +268,6 @@ hr {
         border-radius: 30px;
     }
 
-    .header {
-        padding-left: 30px;
-    }
 
     .header h1 {
         line-height: 100%;
@@ -337,6 +300,10 @@ hr {
         height: 100%;
     }
 
+    #suggest-button-mobile {
+        border: 5px solid white;
+    }
+
     /* Year label */
     .filter-year {
         width: 100%;
@@ -347,9 +314,8 @@ hr {
     }
 
     .filters {
-        margin-left: var(--main-padding);
-        margin-right: var(--main-padding);
-        margin-top: var(--main-padding);
+        padding: var(--main-padding);
+        border: 5px solid white;
     }
 
     .toggle-list {
@@ -666,12 +632,13 @@ hr {
         display: flex;
         width: 100vw;
         padding-left: 50px;
-        background-color: white;
+        background-color: black;
     }
 
     h1 {
         width: 45vw;
         margin-right: 500px;
+        color: white;
     }
     
     /* About, Year, and Suggest Movie bar */
