@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 body {
-    background-color: F7EFDC;
+    background-color: #3B342E;
     color: black;
 }
 
@@ -63,25 +63,37 @@ hr {
     font-size: var(--h2-type);
     display: flex; /* Add flex display */
     align-items: center; /* Align items vertically */
-    color: black;
+    color: white;
 }
 
-.filter-year .year-list  {
-    display: block; 
+/* Hides toggle list before clicked */
+.filter-year .toggle-list {
+    display: none; 
 }
 
 /* Shows toggle list after clicked */
 .filter-year .label {
+    cursor: pointer; /* Change cursor to pointer on hover */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: black;
+}
+
+/* Arrow next to the year label */
+.filter-year .arrow {
+    font-size: var(--type-p);
+}
+
+.filter-year.active .arrow {
+    transform: rotate(270deg); /* Rotate arrow when filter-year is active */
 }
 
 /* Decade label */
 .container p {
     font-family: 'Rubik', sans-serif;
     font-size: var(--year-type);
-    color: black;
+    color: white;
 }
 
 /* White check-box */
@@ -114,14 +126,15 @@ hr {
 }
 
 /* Styling for the actual toggle list once it's clicked */
-.year-list {
+.toggle-list {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
+    z-index: 1; /* Has toggle-list appear on top of other content */
     border-top: none;
     padding: 5px 0;
     display: none;
+    background-color: black;
 }
 
 /* ------------- Suggest A Movie Button ------------- */
@@ -144,11 +157,11 @@ hr {
     width: 100%;
     text-align: center;
     color: black;
-    background: #FCECA4;
+    background: #EADFC5;
 }
 
 #suggest-button-desktop:hover {
-    background: #ddc65f;
+    background: #F7EFDC;
 }
 
 /* ------------- Movie Suggested: Top Bar ------------- */
@@ -221,7 +234,7 @@ hr {
 
 @media (min-width: 320px) {
     :root {
-        --type-p: 18px;
+        --type-p: 20px;
         --h1-type: calc(3.3 * var(--type-p));
         --h2-type: calc(1.5 * var(--type-p));
         --type-year-label: calc(1.5 * var(--type-p));
@@ -229,7 +242,7 @@ hr {
         --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(5 * var(--type-p));
         --movie-info-type: 40px;
-
+        --movie-statistics-type: 50px;
 
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
@@ -251,6 +264,18 @@ hr {
         display: none;
     }
 
+    .about {
+        background-color: #C2D5BF;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        margin: var(--main-padding);
+        border-radius: 30px;
+    }
+
+    .header {
+        padding-left: 30px;
+    }
+
     /* Shows mobile design */
     .suggestion-mobile {
         display: block;
@@ -270,27 +295,48 @@ hr {
         min-height: 100vh;
     }
 
-    /* Year label */
-    .filter-year {
-        width: 100%;
-        padding-bottom: var(--main-padding);
-    }
-
-    .label {
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-    }
-    
     /* Suggest Movie button */
     .suggest-button-mobile {
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        position: static;
+        /* bottom: 0;
+        left: 0; */
         width: 100%;
         height: 100%;
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
         margin-bottom: var(--main-padding);
+    }
+
+    /* Year label */
+    .filter-year {
+        width: 100%;
+    }
+
+    .label {
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+        margin-top: 0;
+    }
+
+    .filters {
+        margin-left: var(--main-padding);
+        margin-right: var(--main-padding);
+        margin-top: var(--main-padding);
+    }
+
+    /* Select Years */
+    .filter-year.active .toggle-list {
+        display: block;
+    }
+
+    .toggle-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+        width: 100vw;
+        padding-left: var(--main-padding);
+        padding-right: var(--main-padding);
+        margin-top: 10px;
     }
     
     /* Create a custom checkbox */
@@ -303,6 +349,11 @@ hr {
         background-color: white;
         border: solid 2px;
         border-color: black;
+    }
+
+    .container .checkmark {
+        margin-left: 20px;
+        margin-top: 30px;
     }
     
     /* On mouse-over, add a grey background color */
@@ -333,10 +384,6 @@ hr {
     /* Entire movie container */
     .movie-info {
         background-color: white;
-    }
-
-    .movie-top {
-        padding-top: var(--main-padding);
     }
 
     /* Top bar */
@@ -432,7 +479,7 @@ hr {
         --h1-type: calc(1.3 * var(--type-p));
         --h2-type: calc(1.3 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
-        --year-type: 35px;
+        --year-type: 50px;
         --title-type: calc(2.5 * var(--type-p));
         --movie-info-type: calc(1.2 * var(--type-p));
         --main-padding: calc(1 * var(--type-p));
@@ -473,38 +520,33 @@ hr {
         /* justify-content: space-between; */
     }
 
-    .suggest-button-mobile {
-        position: fixed;
-        bottom: 0;
-    }
+    /* .suggest-movie {
+        bottom: var(--main-padding); 
+        width: 93vw;
+    } */
 
     .label {
-        border: 3px solid;
         padding: var(--main-padding);
-        margin-bottom: var(--main-padding);
-        height: 100%;
     }
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .year-list {
+    .toggle-list {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
         display: flex; /* Center the line horizontally */
         flex-wrap: wrap;
         justify-content: space-between;
-        border: 1px solid white;
         /* border-top: none;  */
         border-radius: 0 0 5px 5px;
-        margin-top: 50px;
     }
     
     .container {
-        padding: 20px;
+        padding: 30px;
         display: flex;
         align-items: center;
-        max-width: 200px;
+        width: 93vw;
     }
 
     .container:hover {
@@ -512,13 +554,13 @@ hr {
     }
 
     .container p {
-        padding-left: 60px;
+        padding-left: 70px;
     }
 
-    .container .checkmark {
+    /* .container .checkmark {
         margin-left: 20px;
         margin-top: 22px;
-    }
+    } */
 
     .container .checkmark:after {
         content: "\2713"; /* Unicode checkmark character */
@@ -535,7 +577,7 @@ hr {
         border-radius: 30px;
     }
 
-    .year-list {
+    .toggle-list {
         width: 93vw;
     }
 
@@ -658,6 +700,10 @@ hr {
         padding-left: 20px;
     }
 
+    .filter-year.active .toggle-list {
+        display: block;
+    }
+
     /* Suggest Movie button */
     .suggest-movie {
         position: relative;
@@ -675,13 +721,12 @@ hr {
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .year-list  {
+    .toggle-list {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
         display: flex;
         justify-content: center; /* Center the line horizontally */
-        border: 1px solid white;
         /* border-top: none;  */
         border-radius: 0 0 5px 5px;
         padding-top: 20px;

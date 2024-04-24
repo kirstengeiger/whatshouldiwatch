@@ -12,13 +12,18 @@
             <section class="intro-mobile">
                 <section class="about">
                     <section class="header">
-                        <h1>Looking for something to watch?</h1>
+                        <h1>Looking to&nbsp;find something to watch?</h1>
                     </section>
                 </section>
-                    <section class="buttons">
+                <section class="suggest-movie">
+                    <button id="suggest-button-mobile">Suggest Movie
+                    </button>
+                </section>
+                    <section class="filters">
                         <ul class="filter-year">
-                            <p class="label">Choose the movie era that you're interested in or just get one!</p>
-                            <div class="year-list">
+                            <p class="label">Year<span class="arrow">◀</span></p>
+                            <div class="toggle-list">
+                                <!-- <hr> -->
                                 <label class="container">
                                     <p>2020s</p>
                                     <input type="checkbox" class="year-checkbox" value="2020-2029">
@@ -34,27 +39,9 @@
                                     <input type="checkbox" class="year-checkbox" value="2000-2009">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="container">
-                                    <p>1990s</p>
-                                    <input type="checkbox" class="year-checkbox" value="1990-1999">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container">
-                                    <p>1980s</p>
-                                    <input type="checkbox" class="year-checkbox" value="1980-1989">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container">
-                                    <p>1970s</p>
-                                    <input type="checkbox" class="year-checkbox" value="1970-1979">
-                                    <span class="checkmark"></span>
-                                </label>
                             </div>
                         </ul>
                     </section>
-                    <button id="suggest-button-mobile">
-                        <section class="suggest-movie">Suggest Movie</section>
-                    </button>
             </section>
 
             <!---------------------- Desktop Version ---------------------->
@@ -67,7 +54,7 @@
                         <section class="filters">
                             <ul class="filter-year">
                                 <p class="label">Year<span class="arrow">◀</span></p>
-                                <div class="year-list">
+                                <div class="toggle-list">
                                     <label class="container">
                                         <p>2020s</p>
                                         <input type="checkbox" class="year-checkbox" value="2020-2029">
@@ -83,21 +70,6 @@
                                         <input type="checkbox" class="year-checkbox" value="2000-2009">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="container">
-                                        <p>1990s</p>
-                                        <input type="checkbox" class="year-checkbox" value="1990-1999">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">
-                                        <p>1980s</p>
-                                        <input type="checkbox" class="year-checkbox" value="1980-1989">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">
-                                        <p>1970s</p>
-                                        <input type="checkbox" class="year-checkbox" value="1970-1979">
-                                        <span class="checkmark"></span>
-                                    </label>
                                 </div>
                             </ul>
                         </section>
@@ -108,7 +80,7 @@
                 </section>
             </section>
             <section class="movie">
-                <ul id="suggested-movie"></ul>
+                    <ul id="suggested-movie"></ul>
             </section>
         </main>
     </body> 
