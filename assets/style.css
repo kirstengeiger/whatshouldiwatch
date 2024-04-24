@@ -688,10 +688,6 @@ hr {
     .filters {
         margin-right: var(--main-padding);
     }
-    
-    .filters {
-        border: 1px solid;
-    }
 
     /* About */
     .text {
@@ -707,12 +703,15 @@ hr {
     /* ------------- Year Filter ------------- */
     .filters {
         align-items: center;
-        width: 15vw;
+        width: 20vw;
         display: flex;
+        margin: 0;
     }
 
     .label {
         margin: 0;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .filters-year {
@@ -736,7 +735,8 @@ hr {
     }
 
     #suggest-button-desktop {
-        width: 25vw;
+        width: 20vw;
+        margin-left: 30px;
     }
 
     /* ------------- Check Mark ------------- */
