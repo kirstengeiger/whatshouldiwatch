@@ -234,6 +234,14 @@ hr {
     padding-bottom: calc(0.5 * var(--type-p));
 }
 
+.streaming {
+    background-color: #AFEBA0;
+}
+
+.streaming:hover {
+    background-color: #75ab68;
+}
+
 
 @media (min-width: 320px) {
     :root {
@@ -451,10 +459,6 @@ hr {
         right: 0;
         padding: var(--main-padding);
         color: black;
-    }
-
-    .streaming {
-        background-color: #AFEBA0;
     }
 }
 

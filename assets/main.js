@@ -107,7 +107,11 @@ function suggestMovie() {
                                     <p class="director">Directed by ${randomEntryData.director}</p>
                                     <p class="starring">Starring ${randomEntryData.stars}</p>
                                 </section>
-                                <a href="${randomEntryData.streamLink}"><p class="streaming">Streaming on ${randomEntryData.streamPlatform}</p></a>
+                                <a href="${randomEntryData.streamLink}">
+                                    <section class="streaming-link">
+                                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform}</p>
+                                    </section>
+                                </a>
                             </section>
                         </section>
                     </section
