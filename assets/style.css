@@ -205,7 +205,6 @@ hr {
 }
 
 .movie-statistics p {
-    /* font-size: var(--type-p); */
     color: gray;
 }
 
@@ -377,7 +376,7 @@ hr {
 
     /* Top bar */
     .top-bar {
-        padding: 30px;
+        padding: var(--main-padding);
         display: flex;
         justify-content: space-between; /* Spread out the buttons evenly */
         align-items: center; /* Align items vertically */
@@ -544,11 +543,6 @@ hr {
         transform: translate(-50%, -50%);
     }
 
-    .movie-info {
-        margin: var(--main-padding);
-        border-radius: 30px;
-    }
-
     .toggle-list {
         width: 93vw;
     }
@@ -559,12 +553,11 @@ hr {
         justify-content: center;
         padding-top: var(--main-padding);
         padding-bottom: calc(1 * var(--main-padding));
-        height: 80vh;
     }
 
     .poster {
-        max-width: 100%;
-        max-height: 100vh;
+        max-width: 60vw;
+        max-height: 50vh;
     }
 
     .title {
@@ -578,7 +571,6 @@ hr {
         padding-top: 0;
         padding-right: var(--main-padding);
         padding-bottom: var(--main-padding);
-        line-height: 130%;
         width: 100%;
     }
 }
@@ -760,7 +752,6 @@ hr {
         background-position: center;
         background-repeat: no-repeat;
         margin: var(--main-padding);
-        border-radius: 30px;
         height: 77vh;
     }
 
