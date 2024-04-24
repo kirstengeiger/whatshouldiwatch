@@ -66,26 +66,15 @@ hr {
     color: black;
 }
 
-/* Hides toggle list before clicked */
-.filter-year .toggle-list {
-    display: none; 
+.filter-year .year-list  {
+    display: block; 
 }
 
 /* Shows toggle list after clicked */
 .filter-year .label {
-    cursor: pointer; /* Change cursor to pointer on hover */
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Arrow next to the year label */
-.filter-year .arrow {
-    font-size: var(--type-p);
-}
-
-.filter-year.active .arrow {
-    transform: rotate(270deg); /* Rotate arrow when filter-year is active */
 }
 
 /* Decade label */
@@ -125,14 +114,12 @@ hr {
 }
 
 /* Styling for the actual toggle list once it's clicked */
-.toggle-list {
+.year-list {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1; /* Has toggle-list appear on top of other content */
     background-color: white;
     border-top: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
     display: none;
 }
@@ -234,7 +221,7 @@ hr {
 
 @media (min-width: 320px) {
     :root {
-        --type-p: 20px;
+        --type-p: 18px;
         --h1-type: calc(3.3 * var(--type-p));
         --h2-type: calc(1.5 * var(--type-p));
         --type-year-label: calc(1.5 * var(--type-p));
@@ -242,7 +229,7 @@ hr {
         --about-type: calc(0.8 * var(--type-p));
         --title-type: calc(5 * var(--type-p));
         --movie-info-type: 40px;
-        --movie-statistics-type: 50px;
+
 
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
@@ -304,20 +291,6 @@ hr {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
         margin-bottom: var(--main-padding);
-    }
-
-    /* Select Years */
-    .filter-year.active .toggle-list {
-        display: block;
-    }
-
-    .toggle-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px;
-        width: 100vw;
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
     }
     
     /* Create a custom checkbox */
@@ -514,7 +487,7 @@ hr {
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .toggle-list {
+    .year-list {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
@@ -562,7 +535,7 @@ hr {
         border-radius: 30px;
     }
 
-    .toggle-list {
+    .year-list {
         width: 93vw;
     }
 
@@ -685,10 +658,6 @@ hr {
         padding-left: 20px;
     }
 
-    .filter-year.active .toggle-list {
-        display: block;
-    }
-
     /* Suggest Movie button */
     .suggest-movie {
         position: relative;
@@ -706,7 +675,7 @@ hr {
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .toggle-list {
+    .year-list  {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
