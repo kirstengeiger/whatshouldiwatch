@@ -95,23 +95,26 @@ function suggestMovie() {
                             </section>
                             <section class="movie-right">
                                 <h1 class="title">${randomEntryData.title}</h1>
+                                <hr>
                                 <section class="movie-statistics">
                                         <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
                                         <p class="genre">${randomEntryData.genre}</p>
                                         <p class="yearReleased"><time>${randomEntryData.year}</time></p>
                                         <p class="runTime"><em>${randomEntryData.runTime}</em></p>
                                 </section>
+                                <hr>
                                 <p class="plot">${randomEntryData.plot}</p>
+                                <hr>
                                 <section class="movie-people">
                                     <p class="director">Directed by ${randomEntryData.director}</p>
                                     <p class="starring">Starring ${randomEntryData.stars}</p>
                                 </section>
-                                <a href="${randomEntryData.streamLink}">
-                                    <section class="streaming-link">
-                                        <p class="streaming">Streaming on ${randomEntryData.streamPlatform}</p>
-                                    </section>
-                                </a>
                             </section>
+                            <a href="${randomEntryData.streamLink}">
+                            <section class="streaming-link">
+                                <p class="streaming">Streaming on ${randomEntryData.streamPlatform}</p>
+                            </section>
+                        </a>
                         </section>
                     </section
                 </li>
