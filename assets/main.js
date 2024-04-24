@@ -54,31 +54,34 @@ function suggestMovie() {
 
                 const randomEntryHTML = `
                     <li class="suggestion-mobile">
-                    <section class="top-bar">
-                        <button class="exit-button">X</button>
-                        <button class="refresh-button">Suggest Movie</button>
-                    </section>
-                    <section class="movie-info">
-                        <h1 class="title">${randomEntryData.title}</h1>
-                        <section class="movie-title-poster">
-                            <img class="poster" src="${randomEntryData.poster}">
+                        <section class="top-bar">
+                            <button class="exit-button">X</button>
+                            <button class="refresh-button">Suggest Movie</button>
                         </section>
-                        <section class="movie-statistics">
-                                <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
-                                <p class="genre">${randomEntryData.genre}</p>
-                                <p class="yearReleased"><time>${randomEntryData.year}</time></p>
-                                <p class="runTime"><em>${randomEntryData.runTime}</em></p>
+                        <section class="movie-info">
+                            <section class="movie-top">
+                                <section class="movie-poster">
+                                    <img class="poster" src="${randomEntryData.poster}">
+                                </section>
+                            </section>
+                            <section class="movie-bottom">
+                                <h1 class="title">${randomEntryData.title}</h1>
+                                <section class="movie-statistics">
+                                        <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
+                                        <p class="genre">${randomEntryData.genre}</p>
+                                        <p class="yearReleased"><time>${randomEntryData.year}</time></p>
+                                        <p class="runTime"><em>${randomEntryData.runTime}</em></p>
+                                </section>
+                                <p class="plot">${randomEntryData.plot}</p>
+                                <section class="movie-people">
+                                    <p class="director">Directed by ${randomEntryData.director}</p>
+                                    <p class="starring">Starring ${randomEntryData.stars}</p>
+                                </section>
+                            </section>
+                        <section class="stream-link">
+                            <p class="streaming"><a href="${randomEntryData.streamLink}">▶</a></p>
                         </section>
-                        <p class="plot">${randomEntryData.plot}</p>
-                        <section class="movie-people">
-                            <p class="director">Directed by ${randomEntryData.director}</p>
-                            <p class="starring">Starring ${randomEntryData.stars}</p>
-                        </section>
-                    </section>
-                    <section class="stream-link">
-                        <p class="streaming"><a href="${randomEntryData.streamLink}">▶</a></p>
-                    </section>
-                </li>
+                    </li>
 
                     <li class="suggestion-desktop">
                     <section class="movie-info">
