@@ -462,6 +462,31 @@ hr {
     }
 }
 
+@media (min-width: 700px) {
+        /* Hides mobile design */
+        .intro-mobile {
+            display: none;
+        }
+    
+        .suggestion-tablet {
+            display: none;
+        }
+        
+        .suggestion-mobile {
+            display: none;
+        }
+        
+    
+        /* Shows desktop design */
+        .intro-desktop {
+            display: block;
+        }
+    
+        .suggestion-desktop {
+            display: block;
+        }
+}
+
 @media (min-width: 1200px) {
     :root {
         --type-p: 17px;
@@ -480,29 +505,6 @@ hr {
         --suggest-padding: calc(0.5 * var(--type-p));
         --suggest-radius: 100px;
         --enter-radius: 300px;
-    }
-
-    /* Hides mobile design */
-    .intro-mobile {
-        display: none;
-    }
-
-    .suggestion-tablet {
-        display: none;
-    }
-    
-    .suggestion-mobile {
-        display: none;
-    }
-    
-
-    /* Shows desktop design */
-    .intro-desktop {
-        display: block;
-    }
-
-    .suggestion-desktop {
-        display: block;
     }
     
     /* Intro */
