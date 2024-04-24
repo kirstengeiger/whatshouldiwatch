@@ -4,6 +4,9 @@
 /* "Rubik", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+/* "Jersey 10", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 body {
     background-color: F7EFDC;
     color: black;
@@ -45,7 +48,10 @@ hr {
 }
 
 /* ------------- Year Filter ------------- */
-
+.filters {
+    border-color: black;
+    align-items: center;
+}
 
 .filter-year {
     position: relative;
@@ -173,13 +179,11 @@ hr {
 }
 
 /* ------------- Movie Suggested: Info ------------- */
-
-/* Black line separating the sections */
-hr {
-    border: none;
-    height: 3px;
-    background-color: black; 
-    margin: 20px 0;
+.movie-statistics, 
+.plot,
+.movie-people,
+.streaming {
+    font-size: var(--type-p);
 }
 
 .movie-info p {
@@ -205,7 +209,7 @@ hr {
 }
 
 .movie-statistics p {
-    font-size: var(--movie-statistics-type);
+    font-size: var(--type-p);
     color: gray;
 }
 
@@ -230,16 +234,16 @@ hr {
 
 @media (min-width: 320px) {
     :root {
-        --type-p: 50px;
+        --type-p: 20px;
         --h1-type: calc(3.3 * var(--type-p));
         --h2-type: calc(1.5 * var(--type-p));
         --type-year-label: calc(1.5 * var(--type-p));
         --year-type: 70px;
         --about-type: calc(0.8 * var(--type-p));
-        --title-type: calc(2 * var(--type-p));
+        --title-type: calc(5 * var(--type-p));
         --movie-info-type: 40px;
         --movie-statistics-type: 50px;
-        --button-size: 150px;
+
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -281,7 +285,8 @@ hr {
 
     /* Year label */
     .filter-year {
-        width: 100vw;
+        width: 100%;
+        padding-bottom: var(--main-padding);
     }
 
     .label {
@@ -295,6 +300,7 @@ hr {
         bottom: 0;
         left: 0;
         width: 100%;
+        height: 100%;
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
         margin-bottom: var(--main-padding);
@@ -356,6 +362,10 @@ hr {
         background-color: white;
     }
 
+    .movie-top {
+        padding-top: var(--main-padding);
+    }
+
     /* Top bar */
     .top-bar {
         padding: 30px;
@@ -394,7 +404,6 @@ hr {
         padding-right: 50px;
         padding-top: 50px;
         padding-bottom: 50px;
-        font-size: var(--type-p);
     }
 
     /* Title */
@@ -404,14 +413,15 @@ hr {
         padding-top: var(--main-padding);
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
-        padding-bottom: 50px;
     }
 
     /* Poster */
-    .movie-title-poster {
+    .movie-poster {
         display: flex;
         align-items: center; /* Vertically center the items */
         margin-right: auto;
+        padding-bottom: calc(1* var(--main-padding));
+        margin-top: var(--main-padding);
     }
     
     .poster {
@@ -420,14 +430,14 @@ hr {
     }
 
     img {
-        height: 40vh;
-        width: 50vw;
+        height: 80vh;
+        width: 80vw;
     }
 
     /* Movie statistics */
     .movie-statistics p {
         margin-top: 20px;
-        margin-left: 20px;
+        margin-right: 20px;
         display: inline-block;
         box-sizing: border-box;
         justify-content: center;
@@ -445,14 +455,13 @@ hr {
 
 @media (min-width: 700px) {
     :root {
-        --type-p: 30px;
-        --h1-type: calc(2 * var(--type-p));
+        --type-p: 35px;
+        --h1-type: calc(1.3 * var(--type-p));
         --h2-type: calc(1.3 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
-        --year-type: 20px;
+        --year-type: 35px;
         --title-type: calc(2.5 * var(--type-p));
         --movie-info-type: calc(1.2 * var(--type-p));
-        --movie-statistics-type: 30px;
         --main-padding: calc(1 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -478,9 +487,83 @@ hr {
         display: none;
     }
 
+    .header h1 {
+        font-size: calc(3 * var(--h1-type));
+        line-height: 110%;
+        padding: var(--main-padding);
+        width: 80vw;
+    }
+
+    .buttons {
+        padding: var(--main-padding);
+        display: grid;
+        /* justify-content: space-between; */
+    }
+
+    .suggest-button-mobile {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .label {
+        border: 3px solid;
+        padding: var(--main-padding);
+        margin-bottom: var(--main-padding);
+        height: 100%;
+    }
+
+    /* ------------- Check Mark ------------- */
+    /* Customize the label (the container) */
+    .toggle-list {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        display: flex; /* Center the line horizontally */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: 1px solid white;
+        /* border-top: none;  */
+        border-radius: 0 0 5px 5px;
+        margin-top: 50px;
+    }
+    
+    .container {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        max-width: 200px;
+    }
+
+    .container:hover {
+        background-color: grey;
+    }
+
+    .container p {
+        padding-left: 60px;
+    }
+
+    .container .checkmark {
+        margin-left: 20px;
+        margin-top: 22px;
+    }
+
+    .container .checkmark:after {
+        content: "\2713"; /* Unicode checkmark character */
+        font-size: 20px; /* Adjust the size of the checkmark */
+        color: black; /* Set the color to black */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .movie-info {
         margin: var(--main-padding);
         border-radius: 30px;
+    }
+
+    .toggle-list {
+        width: 93vw;
     }
 
     .movie-poster {
@@ -488,15 +571,19 @@ hr {
         align-items: center;
         justify-content: center;
         padding-top: var(--main-padding);
-        padding-bottom: calc(3 * var(--main-padding));
+        padding-bottom: calc(1 * var(--main-padding));
+        height: 80vh;
     }
 
     .poster {
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 100%;
+        max-height: 100vh;
     }
 
-    .title,
+    .title {
+        padding-bottom: var(--main-padding);
+    }
+
     .movie-statistics,
     .plot,
     .movie-people {
@@ -505,29 +592,8 @@ hr {
         padding-right: var(--main-padding);
         padding-bottom: var(--main-padding);
         line-height: 130%;
-    }
-
-
-    /* .filters {
-        width: 100vw;
-        display: grid;
-        padding-top: var(--main-padding);
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding);
-        margin: var(--main-padding);
-    }
-
-    .filter-year {
         width: 100%;
     }
-
-    .filter-year:active {
-        width: 100%
-    }
-
-    .suggest-movie {
-        position: static;
-    } */
 }
 
 @media (min-width: 1200px) {
@@ -592,11 +658,8 @@ hr {
         margin-right: var(--main-padding);
     }
     
-    .filters,
-    .suggest-button-desktop {
+    .filters {
         border: 1px solid;
-        border-color: black;
-        align-items: center;
     }
 
     /* About */
