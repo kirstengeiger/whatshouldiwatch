@@ -88,36 +88,6 @@ function suggestMovie() {
                     </section>
                 </li>
 
-                <li class="suggestion-tablet">
-                    <section class="movie-info">
-                        <section class="movie-top">
-                            <h1 class="title">${randomEntryData.title}</h1>
-                        </section>
-                        <section class="movie-below">
-                            <section class="movie-left">
-                                <img class="poster" src="${randomEntryData.poster}">
-                            </section>
-                            <section class="movie-right">
-                                <section class="movie-statistics">
-                                        <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
-                                        <p class="genre">${randomEntryData.genre}</p>
-                                        <p class="yearReleased"><time>${randomEntryData.year}</time></p>
-                                        <p class="runTime"><em>${randomEntryData.runTime}</em></p>
-                                </section>
-                                <hr>
-                                <p class="plot">${randomEntryData.plot}</p>
-                                <hr>
-                                <section class="movie-people">
-                                    <p class="director">Directed by ${randomEntryData.director}</p>
-                                    <p class="starring">Starring ${randomEntryData.stars}</p>
-                                </section>
-                                <hr>
-                                <p class="streaming">Streaming on ${randomEntryData.streamPlatform} <a href="${randomEntryData.streamLink}">linked here</a></p>
-                            </section>
-                        </section>
-                    </section
-                </li>
-
                 <li class="suggestion-desktop">
                     <section class="movie-info">
                         <section class="movie-below">
@@ -172,9 +142,9 @@ function handleExitButtonClick(event) {
 // Add click event listener to the document and delegate it to exit buttons
 document.addEventListener('click', handleExitButtonClick);
 
-// Add event listener to toggle movie section visibility and hide background image
-const suggestButton = document.getElementById('suggest-button-desktop');
+// Add event listener to toggle movie section visibility
+const suggestButton = document.getElementById('suggest-button-mobile');
 const movieSection = document.querySelector('.movie');
 suggestButton.addEventListener('click', function() {
-    movieSection.classList.add('suggestion-active'); // Add class to hide background image
+    movieSection.classList.add('active'); // Add the "active" class to show the movie section
 });
