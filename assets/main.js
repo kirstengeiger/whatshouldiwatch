@@ -18,15 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Add event listener to the "Suggest Movie" button in intro-mobile
+    // Add event listener to the "Suggest Movie" buttons in both mobile and desktop versions
     const suggestButtonMobile = document.getElementById('suggest-button-mobile');
     suggestButtonMobile.addEventListener('click', suggestMovie);
 
-    // Ensure that the DOM content related to suggest-button-desktop is fully loaded and ready before trying to attach the event listener
     const suggestButtonDesktop = document.getElementById('suggest-button-desktop');
-    if (suggestButtonDesktop) {
-        suggestButtonDesktop.addEventListener('click', suggestMovie);
-    }
+    suggestButtonDesktop.addEventListener('click', suggestMovie);
 });
 
 // Define the suggestMovie function to handle the "Suggest Movie" button click
@@ -63,32 +60,27 @@ function suggestMovie() {
                     </section>
                     <section class="movie-info">
                         <h1 class="title">${randomEntryData.title}</h1>
-                        <hr>
                         <section class="movie-title-poster">
                             <img class="poster" src="${randomEntryData.poster}">
                         </section>
-                        <hr>
                         <section class="movie-statistics">
                                 <p class="imdbRating">⭑ ${randomEntryData.imdbRating}</p>
                                 <p class="genre">${randomEntryData.genre}</p>
                                 <p class="yearReleased"><time>${randomEntryData.year}</time></p>
                                 <p class="runTime"><em>${randomEntryData.runTime}</em></p>
                         </section>
-                        <hr>
                         <p class="plot">${randomEntryData.plot}</p>
-                        <hr>
                         <section class="movie-people">
                             <p class="director">Directed by ${randomEntryData.director}</p>
                             <p class="starring">Starring ${randomEntryData.stars}</p>
                         </section>
-                        <hr>
                     </section>
                     <section class="stream-link">
                         <p class="streaming"><a href="${randomEntryData.streamLink}">▶</a></p>
                     </section>
                 </li>
 
-                <li class="suggestion-desktop">
+                    <li class="suggestion-desktop">
                     <section class="movie-info">
                         <section class="movie-below">
                             <section class="movie-left">
@@ -116,6 +108,8 @@ function suggestMovie() {
                         </section>
                     </section
                 </li>
+
+                
                 `;
 
                 const dataList = document.getElementById('suggested-movie');
