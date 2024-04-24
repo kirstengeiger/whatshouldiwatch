@@ -789,6 +789,7 @@ hr {
         margin: 0; /* Match margins */
         border-radius: 30px; /* Match border radius */
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        width: 100%;
     }
     
     .movie {
@@ -819,11 +820,6 @@ hr {
         display: flex;
     }
 
-    /* Movie Poster */
-    .movie-left {
-        max-width: 10vw;
-    }
-
     /* All the movie info */
     .movie-right {
         flex: 1;
@@ -837,6 +833,28 @@ hr {
         position: relative;
         overflow-y: auto;
         max-height: 100vh;
+    }
+
+    /* Entire suggested movie section */
+       .movie-below {
+        display: flex;
+    }
+
+    /* Movie Poster */
+    .movie-left {
+        max-width: 40%;
+    }
+
+    /* All the movie info */
+    .movie-right {
+        flex: 1;
+        align-items: center; 
+        background-color: white;
+        right: 0;
+        margin: var(--main-padding);
+        padding: var(--main-padding);
+        border-radius: 15px;
+        width: 30vw;
     }
 
     /* Spacing Content */
@@ -882,29 +900,6 @@ hr {
         line-height: 110%;
     }
 
-
-    /* Entire suggested movie section */
-    .movie-below {
-        display: flex;
-    }
-
-    /* Movie Poster */
-    .movie-left {
-        max-width: 40%;
-    }
-
-    /* All the movie info */
-    .movie-right {
-        flex: 1;
-        align-items: center; 
-        background-color: white;
-        right: 0;
-        margin: var(--main-padding);
-        padding: var(--main-padding);
-        border-radius: 15px;
-        width: 30vw;
-    }
-
     /* Movie statistics */
     .movie-statistics p {
         margin-top: 0;
@@ -920,6 +915,6 @@ hr {
         padding-top: 30px;
         padding-bottom: 30px;
         padding-left: 30px;
-        height: 100vh;
+        height: 80vh;
     }
 }
