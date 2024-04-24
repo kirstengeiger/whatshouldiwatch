@@ -756,6 +756,7 @@ hr {
         padding: 20px;
         display: flex;
         align-items: center;
+        width: 20vw;
     }
 
     .container:hover {
@@ -813,6 +814,7 @@ hr {
         height: 77vh;
         border-radius: 30px;
         background-color: black;
+        margin: 0;
     }
 
     /* Entire suggested movie section */
@@ -909,12 +911,11 @@ hr {
 
     /* Movie poster */
     img {
-        position: absolute; /* Position the image absolutely within its container */
-        top: 0; /* Align the image to the top of the container */
-        /* left: 0; Align the image to the left of the container */
+        position: absolute;
+        top: 0; 
         padding-top: 30px;
         padding-bottom: 30px;
         padding-left: 30px;
-        height: 80vh;
+        height: 77vh;
     }
 }
