@@ -56,7 +56,6 @@ function suggestMovie() {
                     <li class="suggestion-mobile">
                         <section class="top-bar">
                             <button class="exit-button">X</button>
-                            <button class="refresh-button">Suggest Movie</button>
                         </section>
                         <section class="movie-info">
                             <section class="movie-top">

@@ -7,6 +7,7 @@
 /* "Jersey 10", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
 body {
     background-color: #3B342E;
     color: black;
@@ -19,12 +20,6 @@ h1 {
 }
 
 /* ------------- About the site ------------- */
-.about {
-    background-image: url("static-tv.jpeg");
-    /* background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
-}
 
 .about p {
     font-family: 'Rubik', sans-serif;
@@ -84,6 +79,7 @@ hr {
     justify-content: space-between;
     align-items: center;
     background-color: #EADFC5;
+    width: 100%;
 }
 
 /* Select Years */
@@ -197,6 +193,7 @@ hr {
 .exit-button {
     font-family: 'Popppins', sans-serif;
     text-align: center;
+    color: black;
 }
 
 /* Shows movie section once .suggest-movie button is clicked */
@@ -294,8 +291,8 @@ hr {
     }
 
     .about {
-        /* background-image: url('https://i.pinimg.com/originals/f8/01/a3/f801a36277fef9657a41b4c5954506e1.gif'); */
-        background-color: #C2D5BF;
+        background-image: url('https://i.pinimg.com/originals/f8/01/a3/f801a36277fef9657a41b4c5954506e1.gif');
+        /* background-color: #C2D5BF; */
         padding-top: 150px;
         padding-bottom: 150px;
         margin-top: var(--main-padding);
@@ -431,14 +428,7 @@ hr {
         border-radius: 50%; /* Make the button a circle */
         border: 4px solid white;
         font-size: 40px;
-    }
-
-    /* Refresh button */
-    .refresh-button {
-        justify-content: center;
-        align-items: center;
-        font-family: 'Rubik', sans-serif;
-        font-size: var(--type-p);
+        background-color: #F7EFDC;
     }
 
     /* Spacing for movie info below top bar */
@@ -633,7 +623,7 @@ hr {
         --h1-type: calc(2 * var(--type-p));
         --h2-type: calc(1.3 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
-        --year-type: 20px;
+        --year-type: 25px;
         --title-type: calc(2.5 * var(--type-p));
         --movie-info-type: calc(1.2 * var(--type-p));
         --movie-statistics-type: 20px;
@@ -642,6 +632,7 @@ hr {
         --genre-padding: calc(2 * var(--type-p));
         --movie-padding: calc(1.5 * var(--type-p));
         --suggest-padding: calc(0.5 * var(--type-p));
+        --suggest-radius: 0px;
     }
     
     /* Hides mobile design */
@@ -727,11 +718,11 @@ hr {
     .suggest-movie {
         position: relative;
         margin-bottom: 0;
-        width: 50vw;
     }
 
     #suggest-button-desktop .suggest-movie {
-        width: auto; /* Or specify a specific width */
+        width: 100%;
+        align-content: center;
     }
 
     #suggest-button-desktop {
@@ -748,8 +739,9 @@ hr {
         display: flex;
         justify-content: center; /* Center the line horizontally */
         /* border-top: none;  */
-        border-radius: 0 0 5px 5px;
-        padding-top: 20px;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
     .container {
