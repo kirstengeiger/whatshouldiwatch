@@ -96,6 +96,7 @@ hr {
 .container p {
     font-family: 'Poppins', sans-serif;
     font-size: var(--year-type);
+    color: black;
 }
 
 /* White check-box */
@@ -133,7 +134,7 @@ hr {
     top: 100%;
     left: 0;
     z-index: 1; /* Has toggle-list appear on top of other content */
-    background-color: #090D0C;
+    background-color: white;
     border-top: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 5px 0;
@@ -285,18 +286,14 @@ hr {
         min-height: 100vh;
     }
 
-    /* About section: title and intro */
-    .about {
-        padding-top: var(--main-padding);
-        padding-left: var(--main-padding);
-        padding-right: var(--main-padding); 
-    }
-
     /* Year label */
     .filter-year {
+        width: 100vw;
+    }
+
+    .label {
         padding-left: var(--main-padding);
         padding-right: var(--main-padding);
-        width: 100vw;
     }
     
     /* Suggest Movie button */
@@ -326,10 +323,10 @@ hr {
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .container {
+    /* .container {
         padding-left: calc(1.5 * var(--year-type));
         margin-top: calc(0.5 * var(--main-padding));
-    }
+    } */
     
     /* Create a custom checkbox */
     .checkmark {
@@ -463,14 +460,14 @@ hr {
 
 @media (min-width: 1200px) {
     :root {
-        --type-p: 15px;
-        --h1-type: calc(2.5 * var(--type-p));
-        --h2-type: calc(1.7 * var(--type-p));
+        --type-p: 17px;
+        --h1-type: calc(2 * var(--type-p));
+        --h2-type: calc(1.3 * var(--type-p));
         --about-type: calc(1 * var(--type-p));
         --year-type: 20px;
         --title-type: calc(2.5 * var(--type-p));
         --movie-info-type: calc(1.2 * var(--type-p));
-        --movie-statistics-type: 15px;
+        --movie-statistics-type: 20px;
         --main-padding: calc(1.5 * var(--type-p));
         --year-padding: calc(0.8 * var(--type-p));
         --genre-padding: calc(2 * var(--type-p));
@@ -512,15 +509,17 @@ hr {
 
     /* Title */
     .header-top {
-        padding-bottom: 10px;
+        padding-top: var(--main-padding);
+        padding-bottom: var(--main-padding);
         display: flex;
         width: 100vw;
-        margin-left: var(--main-padding);
-        align-items: space-between;
+        padding-left: 50px;
+        background-color: white;
     }
 
     h1 {
         width: 45vw;
+        margin-right: 500px;
     }
     
     /* About, Year, and Suggest Movie bar */
@@ -580,22 +579,35 @@ hr {
 
     /* ------------- Check Mark ------------- */
     /* Customize the label (the container) */
-    .container {
-        padding-left: calc(1.5 * var(--year-type));
-        margin-top: calc(0.8 * var(--main-padding));
-    }
-
     .toggle-list {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
         width: 100%;
         display: flex;
         justify-content: center; /* Center the line horizontally */
         border: 1px solid white;
         /* border-top: none;  */
         border-radius: 0 0 5px 5px;
-        margin-top: 30px;
+        padding-top: 20px;
+    }
+    
+    .container {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .container:hover {
+        background-color: grey;
+    }
+
+    .container p {
+        padding-left: 40px;
+    }
+
+    .container .checkmark {
+        margin-left: 20px;
+        margin-top: 22px;
     }
 
     .container .checkmark:after {
@@ -627,7 +639,7 @@ hr {
         background-repeat: no-repeat;
         margin: var(--main-padding);
         border-radius: 30px;
-        height: 65vh;
+        height: 77vh;
     }
 
     .movie.suggestion-active {
@@ -636,9 +648,9 @@ hr {
 
     .movie-info {
         display: grid;
-        height: 100%;
+        height: 77vh;
         border-radius: 30px;
-        background-color: white;
+        background-color: black;
     }
 
     /* Entire suggested movie section */
@@ -744,8 +756,9 @@ hr {
         position: absolute; /* Position the image absolutely within its container */
         top: 0; /* Align the image to the top of the container */
         /* left: 0; Align the image to the left of the container */
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
         height: 100vh;
     }
 }
