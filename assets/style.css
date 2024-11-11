@@ -7,11 +7,14 @@
 /* "Jersey 10", sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* Geist, sans-serif; */
+/* 'Geist', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
 /* 'Schibsted Grotesk', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* 'Arimo'; sans-serif;  */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
     --black: #211D19;
@@ -19,6 +22,7 @@
     --green: #C5E4D5;
 
     --intro-font: 'Schibsted Grotesk', sans-serif;
+    --suggestion-font: 'Arimo', sans-serif;
 }
 
 body {
@@ -30,11 +34,29 @@ h1 {
     font-family: var(--intro-font);
     font-size: var(--h1-type);
     color: var(--black);
+    text-transform: capitalize;
 }
 
-.about {
+h3 {
+    font-family: var(--suggestion-font);
+    font-size: var(--h3-type);
+    color: var(--cream);
+}
+
+h1, .instructions {
     border-bottom: 2px solid; /* Adds a black solid border */
     border-color: var(--black);
+}
+
+.instructions {
+    font-family: var(--intro-font);
+    font-size: var(--type-p);
+    color: var(--black);
+}
+
+p {
+    font-family: var(--suggestion-font);
+    color: var(--cream);
 }
 
 .nav-bar {
@@ -64,29 +86,37 @@ h1 {
 }
 
 #play-button {
-    background-color: var(--green); /* Sample color for Play button */
+    background-color: var(--green);
 }
 
 #suggest-button-mobile {
     border-style: solid;
     border-color: var(--black);
+    background-color: var(--cream);
 }
 
 @media (min-width: 320px) {
     :root {
         --type-p: 20px;
-        --h1-type: calc(5 * var(--type-p));
+        --h1-type: calc(10 * var(--type-p));
         --h2-type: calc(2 * var(--type-p));
+        --h3-type: calc(4 * var(--type-p));
 
         --main-padding: calc(3 * var(--type-p));
     }
 
-    .about {
+    h1 {
+        line-height: 110%;
         padding: var(--main-padding);
     }
 
-    h1 {
-        line-height: 110%;
+    .instructions {
+        padding: var(--main-padding);
+    }
+
+    .suggestion-mobile {
+        padding: var(--main-padding);
+        background-color: var(--black);
     }
 
 }
