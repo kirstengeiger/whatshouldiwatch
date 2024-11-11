@@ -48,9 +48,9 @@ h1, .instructions {
     border-color: var(--black);
 }
 
-.instructions {
+.instruction {
     font-family: var(--intro-font);
-    font-size: var(--type-p);
+    font-size: var(--instruction-type);
     color: var(--black);
 }
 
@@ -101,6 +101,7 @@ p {
         --h1-type: calc(10 * var(--type-p));
         --h2-type: calc(2 * var(--type-p));
         --h3-type: calc(4 * var(--type-p));
+        --instruction-type: 40px;
 
         --main-padding: calc(3 * var(--type-p));
     }
@@ -110,13 +111,26 @@ p {
         padding: var(--main-padding);
     }
 
-    .instructions {
+    .instruction {
         padding: var(--main-padding);
     }
 
     .suggestion-mobile {
         padding: var(--main-padding);
         background-color: var(--black);
+    }
+
+    .intro-mobile {
+        position: relative;
+        min-height: 100vh; /* Ensure the section takes up full screen height */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align content to the bottom */
+    }
+
+    .about {
+        position: absolute;
+        bottom: calc(var(--main-padding) * 3);  /* Add extra padding at the bottom to push the content above the nav-bar */
     }
 
 }
