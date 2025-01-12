@@ -11,12 +11,14 @@
             <!---------------------- Mobile Version ---------------------->
             <section class="intro-mobile">
                 <section class="about">
-                    <h1>Looking for a movie to watch?</h1>
-                    <p class="instruction">Scrolling through so many options can be a lot- that’s why we suggest movies to you instead! 
-                    <br> Once one catches your eye, press play and enjoy.</p>
+                    <h1>What Should I Watch?</h1>
+                    <!-- <p class="instruction">Scrolling through so many options can be a lot- that’s why we suggest movies to you instead! 
+                    <br> Once one catches your eye, press play and enjoy.</p> -->
                 </section>
                 <section class="nav-bar">
-                    <a href="${randomEntryData.streamLink}"><button id="play-button">Watch Now</button></a>
+                    <a href="${randomEntryData.streamLink}">
+                        <button id="play-button" class="hidden">Watch Now</button>
+                    </a>
                     <button id="suggest-button-mobile">Suggest Movie</button>                   
                 </section>
             </section>

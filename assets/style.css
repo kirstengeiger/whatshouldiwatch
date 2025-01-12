@@ -43,7 +43,7 @@ h3 {
     color: var(--cream);
 }
 
-h1, .instructions {
+.instructions {
     border-bottom: 2px solid; /* Adds a black solid border */
     border-color: var(--black);
 }
@@ -70,30 +70,40 @@ p {
     z-index: 1000;
 }
 
-#play-button,
+.hidden {
+    display: none;
+}
+
+#play-button {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#play-button:not(.hidden) {
+    opacity: 1;
+}
+
 #suggest-button-mobile {
     flex: 1; /* Take up equal space for each button */
-    padding: var(--main-padding);; /* Optional padding for button height */
+    padding: var(--main-padding); /* Optional padding for button height */
+    margin: var(--main-padding);
+    font-family: 'Rubik', sans-serif;
     font-size: 1.2rem; /* Optional font size for better readability */
     text-align: center;
     box-sizing: border-box;
     width: 50vw;
-
     border: 2px solid; /* Adds a black solid border */
     border-color: var(--black);
-
+    border-radius: 50px; 
+    background-color: var(--black);
     font-size: var(--h2-type);
+    color: var(--cream);
 }
 
 #play-button {
     background-color: var(--green);
 }
 
-#suggest-button-mobile {
-    border-style: solid;
-    border-color: var(--black);
-    background-color: var(--cream);
-}
 
 @media (min-width: 320px) {
     :root {
@@ -130,7 +140,7 @@ p {
 
     .about {
         position: absolute;
-        bottom: calc(var(--main-padding) * 3);  /* Add extra padding at the bottom to push the content above the nav-bar */
+        top: 0;
     }
 
 }
